@@ -82,11 +82,10 @@ public class FirefoxTest {
 
 ## About
 
-WebDriverManager (Copyright &copy; 2015-2016) is a personal project of [Boni Garcia] licensed under [LGPL License 2.1]. Comments, questions and suggestions are always very [welcome][WebDriverManager issues]!
+WebDriverManager-Examples (Copyright &copy; 2016) is a personal project of [Boni Garcia] licensed under [Apache 2.0 License]. Comments, questions and suggestions are always very [welcome][WebDriverManager-Examples issues]!
 
-[Selenium Webdriver]: http://docs.seleniumhq.org/projects/webdriver/
-[LGPL License 2.1]: http://www.gnu.org/licenses/lgpl-2.1.html
-[Boni Garcia]: http://bonigarcia.github.io/
-[WebDriverManager issues]: https://github.com/bonigarcia/webdrivermanager/issues
 [Apache 2.0 License]: http://www.apache.org/licenses/LICENSE-2.0
+[Boni Garcia]: http://bonigarcia.github.io/
+[Selenium Webdriver]: http://docs.seleniumhq.org/projects/webdriver/
 [WebDriverManager]:https://github.com/bonigarcia/webdrivermanager/
+[WebDriverManager-Examples issues]: https://github.com/bonigarcia/webdrivermanager-examples/issues
