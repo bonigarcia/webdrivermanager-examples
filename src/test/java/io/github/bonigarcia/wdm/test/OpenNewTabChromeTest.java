@@ -41,7 +41,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-public class OpenNewTabTest {
+public class OpenNewTabChromeTest {
 
   private WebDriver driver;
 
