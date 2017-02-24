@@ -32,6 +32,7 @@
 		<junit.version>4.12</junit.version>
 		<selenium-java.version>3.1.0</selenium-java.version>
 		<webdrivermanager.version>1.6.0</webdrivermanager.version>
+		<guava.version>21.0</guava.version>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -71,6 +72,12 @@
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
 			<version>${webdrivermanager.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
