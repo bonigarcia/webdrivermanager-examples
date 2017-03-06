@@ -31,7 +31,7 @@ import org.openqa.selenium.interactions.Actions;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Test with Chrome.
+ * Test with Canvas in Chrome.
  *
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
@@ -61,8 +61,7 @@ public class CanvasTest {
 	public void test() throws InterruptedException {
 		driver.get("http://szimek.github.io/signature_pad/");
 
-		WebElement canvas = driver.findElement(By.cssSelector(
-				"#signature-pad > div.m-signature-pad--body > canvas"));
+		WebElement canvas = driver.findElement(By.tagName("canvas"));
 
 		Actions actionBuilder = new Actions(driver);
 		Action drawOnCanvas = actionBuilder.click(canvas)
