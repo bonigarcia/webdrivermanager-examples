@@ -13,7 +13,7 @@
 
 	<developers>
 		<developer>
-			<id>boni.garcia</id>
+			<id>bonigarcia</id>
 			<name>Boni Garcia</name>
 			<email>boni.gg@gmail.com</email>
 		</developer>
@@ -30,7 +30,7 @@
 		<slf4j.version>1.7.12</slf4j.version>
 
 		<junit.version>4.12</junit.version>
-		<selenium-java.version>3.1.0</selenium-java.version>
+		<selenium-java.version>3.2.0</selenium-java.version>
 		<webdrivermanager.version>1.6.0</webdrivermanager.version>
 		<guava.version>21.0</guava.version>
 
