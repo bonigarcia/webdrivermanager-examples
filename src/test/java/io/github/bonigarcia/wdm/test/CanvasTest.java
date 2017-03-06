@@ -62,14 +62,12 @@ public class CanvasTest {
 		driver.get("http://szimek.github.io/signature_pad/");
 
 		WebElement canvas = driver.findElement(By.tagName("canvas"));
-
-		Actions actionBuilder = new Actions(driver);
-		Action drawOnCanvas = actionBuilder.click(canvas)
+		Action action = new Actions(driver).click(canvas)
 				.moveToElement(canvas, 8, 8).clickAndHold(canvas)
 				.moveByOffset(120, 120).moveByOffset(-120, 120)
 				.moveByOffset(-120, -120).moveByOffset(8, 8).release(canvas)
 				.build();
-		drawOnCanvas.perform();
+		action.perform();
 
 		Thread.sleep(5000);
 	}
