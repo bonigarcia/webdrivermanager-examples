@@ -61,19 +61,15 @@ public class CanvasTest {
 	public void test() throws InterruptedException {
 		driver.get("http://szimek.github.io/signature_pad/");
 
-		WebElement div = driver.findElement(
-				By.cssSelector("#signature-pad > div.m-signature-pad--body"));
 		WebElement canvas = driver.findElement(By.cssSelector(
 				"#signature-pad > div.m-signature-pad--body > canvas"));
 
-		System.out.println(div.getTagName());
-		System.out.println(canvas.getTagName());
-
 		Actions actionBuilder = new Actions(driver);
-		Action drawOnCanvas = actionBuilder.click(div)
+		Action drawOnCanvas = actionBuilder.click(canvas)
 				.moveToElement(canvas, 8, 8).clickAndHold(canvas)
-				.moveByOffset(120, 120).moveByOffset(60, 70)
-				.moveByOffset(-140, -140).release(div).build();
+				.moveByOffset(120, 120).moveByOffset(-120, 120)
+				.moveByOffset(-120, -120).moveByOffset(8, 8).release(canvas)
+				.build();
 		drawOnCanvas.perform();
 
 		Thread.sleep(5000);
