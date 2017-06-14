@@ -31,7 +31,7 @@ public class StartNode {
     public static void main(String[] args) throws Exception {
         ChromeDriverManager.getInstance().setup();
         GridLauncherV3.main(new String[] { "-role", "node", "-hub",
-                "http://localhost:4445/grid/register", "-browser",
+                "http://localhost:4444/grid/register", "-browser",
                 "browserName=chrome" });
     }
 
