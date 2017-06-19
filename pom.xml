@@ -32,8 +32,7 @@
         <junit.version>4.12</junit.version>
         <selenium-java.version>3.4.0</selenium-java.version>
         <selenium-server.version>3.4.0</selenium-server.version>
-        <webdrivermanager.version>1.6.2</webdrivermanager.version>
-        <guava.version>21.0</guava.version>
+        <webdrivermanager.version>1.7.0</webdrivermanager.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -79,11 +78,6 @@
             <artifactId>selenium-java</artifactId>
             <version>${selenium-java.version}</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
         </dependency>
     </dependencies>
 </project>
