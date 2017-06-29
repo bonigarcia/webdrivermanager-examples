@@ -36,7 +36,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-public class WebRtcTest {
+public class WebRtcChromeTest {
 
     private WebDriver driver;
 
@@ -48,12 +48,14 @@ public class WebRtcTest {
     @Before
     public void setupTest() {
         ChromeOptions options = new ChromeOptions();
+
         // This flag avoids to grant the user media
         options.addArguments("--use-fake-ui-for-media-stream");
 
         // This flag fakes user media with synthetic video (green with spinner
         // and timer)
         options.addArguments("--use-fake-device-for-media-stream");
+
         driver = new ChromeDriver(options);
     }
 
@@ -68,7 +70,7 @@ public class WebRtcTest {
     public void test() throws InterruptedException {
         // Test data
         int timeout = 30;
-        String sutUrl = "http://localhost:8080";
+        String sutUrl = "https://webrtc.github.io/samples/src/content/devices/input-output/";
 
         // Implicit timeout
         driver.manage().timeouts().implicitlyWait(timeout, SECONDS);
@@ -77,8 +79,8 @@ public class WebRtcTest {
         // Open page
         driver.get(sutUrl);
 
-        // Wait 5 seconds
-        sleep(5000);
+        // Wait 10 seconds
+        sleep(10000);
     }
 
 }
