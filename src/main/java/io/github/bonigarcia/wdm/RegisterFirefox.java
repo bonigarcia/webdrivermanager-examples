@@ -18,21 +18,19 @@ package io.github.bonigarcia.wdm;
 
 import org.openqa.grid.selenium.GridLauncherV3;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-
 /**
- * Register a node in Selnium Grid.
+ * Register a Firefox browser in the Selenium Hub.
  *
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-public class StartNode {
+public class RegisterFirefox {
 
     public static void main(String[] args) throws Exception {
-        ChromeDriverManager.getInstance().setup();
+        FirefoxDriverManager.getInstance().setup();
         GridLauncherV3.main(new String[] { "-role", "node", "-hub",
                 "http://localhost:4444/grid/register", "-browser",
-                "browserName=chrome" });
+                "browserName=firefox,version=54", "-port", "5556" });
     }
 
 }
