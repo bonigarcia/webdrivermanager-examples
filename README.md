@@ -1,4 +1,4 @@
-# WebDriverManager Examples
+# WebDriverManager Examples [![][Logo]][GitHub Repository]
 
 [![License badge](https://img.shields.io/badge/license-Apache2-green.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Twitter Follow](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/boni_gg)
@@ -90,3 +90,5 @@ WebDriverManager-Examples (Copyright &copy; 2016-2017) is a personal project of 
 [Selenium Webdriver]: http://docs.seleniumhq.org/projects/webdriver/
 [WebDriverManager]:https://github.com/bonigarcia/webdrivermanager/
 [WebDriverManager-Examples issues]: https://github.com/bonigarcia/webdrivermanager-examples/issues
+[Logo]: http://bonigarcia.github.io/img/webdrivermanager.png
+[GitHub Repository]: https://github.com/bonigarcia/webdrivermanager-examples
