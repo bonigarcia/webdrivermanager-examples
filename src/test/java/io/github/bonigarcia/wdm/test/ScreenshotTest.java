@@ -17,15 +17,16 @@
 
 package io.github.bonigarcia.wdm.test;
 
+import static org.apache.commons.io.FileUtils.copyFile;
+import static org.openqa.selenium.OutputType.FILE;
+
 import java.io.File;
 import java.io.IOException;
 
-import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -40,32 +41,31 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  */
 public class ScreenshotTest {
 
-	private WebDriver driver;
+    private WebDriver driver;
 
-	@BeforeClass
-	public static void setupClass() {
-		ChromeDriverManager.getInstance().setup();
-	}
+    @BeforeClass
+    public static void setupClass() {
+        ChromeDriverManager.getInstance().setup();
+    }
 
-	@Before
-	public void setupTest() {
-		driver = new ChromeDriver();
-	}
+    @Before
+    public void setupTest() {
+        driver = new ChromeDriver();
+    }
 
-	@After
-	public void teardown() {
-		if (driver != null) {
-			driver.quit();
-		}
-	}
+    @After
+    public void teardown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 
-	@Test
-	public void test() throws IOException {
-		driver.get("https://en.wikipedia.org/wiki/Main_Page");
+    @Test
+    public void test() throws IOException {
+        driver.get("https://en.wikipedia.org/wiki/Main_Page");
 
-		File scrFile = ((TakesScreenshot) driver)
-				.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(scrFile, new File(("screenshot.jpg")));
-	}
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(FILE);
+        copyFile(scrFile, new File(("screenshot.jpg")));
+    }
 
 }

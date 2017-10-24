@@ -17,13 +17,13 @@
 
 package io.github.bonigarcia.wdm.test;
 
+import static java.awt.Toolkit.getDefaultToolkit;
+import static javax.imageio.ImageIO.write;
+
 import java.awt.Rectangle;
 import java.awt.Robot;
-import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
-
-import javax.imageio.ImageIO;
 
 import org.junit.After;
 import org.junit.Before;
@@ -42,35 +42,35 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  */
 public class FullScreenshotTest {
 
-	private WebDriver driver;
+    private WebDriver driver;
 
-	@BeforeClass
-	public static void setupClass() {
-		ChromeDriverManager.getInstance().setup();
-	}
+    @BeforeClass
+    public static void setupClass() {
+        ChromeDriverManager.getInstance().setup();
+    }
 
-	@Before
-	public void setupTest() {
-		driver = new ChromeDriver();
-	}
+    @Before
+    public void setupTest() {
+        driver = new ChromeDriver();
+    }
 
-	@After
-	public void teardown() {
-		if (driver != null) {
-			driver.quit();
-		}
-	}
+    @After
+    public void teardown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 
-	@Test
-	public void test() throws Exception {
-		driver.get("https://en.wikipedia.org/wiki/Main_Page");
+    @Test
+    public void test() throws Exception {
+        driver.get("https://en.wikipedia.org/wiki/Main_Page");
 
-		Robot robot = new Robot();
-		Rectangle captureSize = new Rectangle(
-				Toolkit.getDefaultToolkit().getScreenSize());
-		BufferedImage capture = robot.createScreenCapture(captureSize);
+        Robot robot = new Robot();
+        Rectangle captureSize = new Rectangle(
+                getDefaultToolkit().getScreenSize());
+        BufferedImage capture = robot.createScreenCapture(captureSize);
 
-		ImageIO.write(capture, "jpg", new File("full-screenshot.jpg"));
-	}
+        write(capture, "jpg", new File("full-screenshot.jpg"));
+    }
 
 }

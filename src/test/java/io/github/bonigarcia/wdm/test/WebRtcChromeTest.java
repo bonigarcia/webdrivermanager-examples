@@ -79,8 +79,8 @@ public class WebRtcChromeTest {
         // Open page
         driver.get(sutUrl);
 
-        // Wait 10 seconds
-        sleep(10000);
+        // Wait 5 seconds
+        sleep(5000);
     }
 
 }

@@ -17,6 +17,10 @@
 
 package io.github.bonigarcia.wdm.test;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
+import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
+import static org.openqa.selenium.support.ui.ExpectedConditions.textToBePresentInElementLocated;
+
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -31,7 +35,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -45,44 +48,45 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 @RunWith(Parameterized.class)
 public class MultipleBrowsersTest {
 
-  private WebDriver driver;
+    private WebDriver driver;
 
-  @Parameter
-  public Class<? extends WebDriver> driverClass;
+    @Parameter
+    public Class<? extends WebDriver> driverClass;
 
-  @Parameters(name = "{index}: {0}")
-  public static Collection<Object[]> data() {
-    return Arrays.asList(new Object[][] { { ChromeDriver.class }, { FirefoxDriver.class } });
-  }
-
-  @Before
-  public void setupTest() throws Exception {
-    WebDriverManager.getInstance(driverClass).setup();
-    driver = driverClass.newInstance();
-  }
-
-  @After
-  public void teardown() {
-    if (driver != null) {
-      driver.quit();
+    @Parameters(name = "{index}: {0}")
+    public static Collection<Object[]> data() {
+        return Arrays.asList(new Object[][] { { ChromeDriver.class },
+                { FirefoxDriver.class } });
     }
-  }
 
-  @Test
-  public void test() {
-    // Your test code here. For example:
-    WebDriverWait wait = new WebDriverWait(driver, 30); // 30 seconds of timeout
-    driver.get("https://en.wikipedia.org/wiki/Main_Page"); // navigate to Wikipedia
+    @Before
+    public void setupTest() throws Exception {
+        WebDriverManager.getInstance(driverClass).setup();
+        driver = driverClass.newInstance();
+    }
 
-    By searchInput = By.id("searchInput"); // search for "Software"
-    wait.until(ExpectedConditions.presenceOfElementLocated(searchInput));
-    driver.findElement(searchInput).sendKeys("Software");
-    By searchButton = By.id("searchButton");
-    wait.until(ExpectedConditions.elementToBeClickable(searchButton));
-    driver.findElement(searchButton).click();
+    @After
+    public void teardown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 
-    wait.until(ExpectedConditions.textToBePresentInElementLocated(By.tagName("body"),
-        "Computer software")); // assert that the resulting page contains a text
-  }
+    @Test
+    public void test() {
+        // Your test code here. For example:
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        driver.get("https://en.wikipedia.org/wiki/Main_Page");
+
+        By searchInput = By.id("searchInput");
+        wait.until(presenceOfElementLocated(searchInput));
+        driver.findElement(searchInput).sendKeys("Software");
+        By searchButton = By.id("searchButton");
+        wait.until(elementToBeClickable(searchButton));
+        driver.findElement(searchButton).click();
+
+        wait.until(textToBePresentInElementLocated(By.tagName("body"),
+                "Computer software"));
+    }
 
 }

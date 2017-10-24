@@ -18,8 +18,6 @@ package io.github.bonigarcia.wdm;
 
 import org.openqa.grid.selenium.GridLauncherV3;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-
 /**
  * Register a Chrome browser in the Selenium Hub.
  *

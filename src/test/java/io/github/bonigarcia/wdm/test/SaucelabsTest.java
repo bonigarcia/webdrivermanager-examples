@@ -63,8 +63,6 @@ public class SaucelabsTest {
         driver.get("https://en.wikipedia.org/wiki/Main_Page");
         String title = driver.getTitle();
         System.out.println(title);
-
-        Thread.sleep(30000); // Wait to see the page
     }
 
 }
