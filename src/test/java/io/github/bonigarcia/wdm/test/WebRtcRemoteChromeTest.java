@@ -17,7 +17,6 @@
 
 package io.github.bonigarcia.wdm.test;
 
-import static java.lang.Thread.sleep;
 import static org.openqa.selenium.OutputType.BASE64;
 import static org.openqa.selenium.chrome.ChromeOptions.CAPABILITY;
 import static org.openqa.selenium.remote.DesiredCapabilities.chrome;
