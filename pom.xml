@@ -34,6 +34,7 @@
         <selenium-server.version>3.8.1</selenium-server.version>
         <phantomjsdriver.version>1.4.3</phantomjsdriver.version>
         <webdrivermanager.version>2.0.1</webdrivermanager.version>
+        <testng.version>6.13</testng.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -84,6 +85,12 @@
             <groupId>com.codeborne</groupId>
             <artifactId>phantomjsdriver</artifactId>
             <version>${phantomjsdriver.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

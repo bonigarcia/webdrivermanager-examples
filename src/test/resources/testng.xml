@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG" verbose="2" parallel="classes" thread-count="2"
+    data-provider-thread-count="3">
+    <test name="ChromeAndFirefox">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+            <class name="io.github.bonigarcia.wdm.test.TestNgFirefoxTest">
+                <methods>
+                    <include name="testFirefox" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
