@@ -63,7 +63,7 @@ public class WebRtcRemoteFirefoxTest {
     }
 
     @Test
-    public void test() throws InterruptedException {
+    public void test() {
         driver.get(
                 "https://webrtc.github.io/samples/src/content/devices/input-output/");
         String screenshotBase64 = ((TakesScreenshot) driver)
