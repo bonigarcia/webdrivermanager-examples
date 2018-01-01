@@ -14,7 +14,6 @@
  * limitations under the License.
  *
  */
-
 package io.github.bonigarcia.wdm.test;
 
 import static org.hamcrest.CoreMatchers.containsString;
