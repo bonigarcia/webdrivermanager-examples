@@ -17,6 +17,8 @@
 
 package io.github.bonigarcia.wdm.test;
 
+import static org.junit.Assert.assertTrue;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -39,9 +41,9 @@ public class RemoteTest {
 
     @Before
     public void setupTest() throws MalformedURLException {
-        DesiredCapabilities capability = DesiredCapabilities.chrome();
+        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
-                capability);
+                capabilities);
     }
 
     @After
@@ -54,6 +56,8 @@ public class RemoteTest {
     @Test
     public void test() {
         driver.get("https://en.wikipedia.org/wiki/Main_Page");
+        assertTrue(
+                driver.getTitle().equals("Wikipedia, the free encyclopedia"));
     }
 
 }
