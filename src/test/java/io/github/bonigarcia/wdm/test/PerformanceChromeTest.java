@@ -69,7 +69,7 @@ public class PerformanceChromeTest {
     @After
     public void teardown() {
         for (int i = 0; i < NUMBER_OF_BROWSERS; i++) {
-            driverList.get(i).close();
+            driverList.get(i).quit();
         }
     }
 
