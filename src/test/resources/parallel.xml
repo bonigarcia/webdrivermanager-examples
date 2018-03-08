@@ -1,0 +1,184 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG" verbose="2" parallel="tests" thread-count="20"
+    data-provider-thread-count="20">
+    <test name="chrome01">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome02">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome03">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome04">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome05">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome06">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome07">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome08">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome09">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome10">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome11">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome12">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome13">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome14">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome15">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome16">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome17">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome18">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome19">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="chrome20">
+        <classes>
+            <class name="io.github.bonigarcia.wdm.test.TestNgChromeTest">
+                <methods>
+                    <include name="testChrome" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

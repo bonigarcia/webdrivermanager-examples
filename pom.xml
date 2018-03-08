@@ -119,6 +119,22 @@
                         <version>${maven-surefire-plugin.version}</version>
                     </dependency>
                 </dependencies>
+                <!--
+                <inherited>true</inherited>
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src\test\resources\parallel.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+                -->
             </plugin>
         </plugins>
     </build>
