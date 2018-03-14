@@ -31,8 +31,8 @@
         <logback.version>1.2.3</logback.version>
 
         <junit.version>4.12</junit.version>
-        <selenium-java.version>3.9.1</selenium-java.version>
-        <selenium-server.version>3.9.1</selenium-server.version>
+        <selenium-java.version>3.11.0</selenium-java.version>
+        <selenium-server.version>3.11.0</selenium-server.version>
         <phantomjsdriver.version>1.4.3</phantomjsdriver.version>
         <webdrivermanager.version>2.1.0</webdrivermanager.version>
         <testng.version>6.13</testng.version>
