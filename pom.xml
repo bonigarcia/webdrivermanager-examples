@@ -36,7 +36,7 @@
         <phantomjsdriver.version>1.4.3</phantomjsdriver.version>
         <webdrivermanager.version>2.1.0</webdrivermanager.version>
         <testng.version>6.13</testng.version>
-        <spring-boot.version>2.0.0.M7</spring-boot.version>
+        <spring-boot.version>2.0.0.RELEASE</spring-boot.version>
 
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
 
