@@ -34,7 +34,7 @@
         <selenium-java.version>3.11.0</selenium-java.version>
         <selenium-server.version>3.11.0</selenium-server.version>
         <phantomjsdriver.version>1.4.3</phantomjsdriver.version>
-        <webdrivermanager.version>2.1.0</webdrivermanager.version>
+        <webdrivermanager.version>2.2.0</webdrivermanager.version>
         <testng.version>6.13</testng.version>
         <spring-boot.version>2.0.0.RELEASE</spring-boot.version>
 
