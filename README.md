@@ -26,7 +26,7 @@ public class ChromeTest {
 
 	@BeforeClass
 	public static void setupClass() {
-		ChromeDriverManager.getInstance().setup();
+		WebDriverManager.chromedriver().setup();
 	}
 
 	@Before
@@ -58,7 +58,7 @@ public class FirefoxTest {
 
 	@BeforeClass
 	public static void setupClass() {
-		FirefoxDriverManager.getInstance().setup();
+		WebDriverManager.firefoxdriver().setup();
 	}
 
 	@Before
