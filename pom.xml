@@ -31,8 +31,7 @@
         <logback.version>1.2.3</logback.version>
 
         <junit.version>4.12</junit.version>
-        <selenium-java.version>3.11.0</selenium-java.version>
-        <selenium-server.version>3.11.0</selenium-server.version>
+        <selenium.version>3.13.0</selenium.version>
         <phantomjsdriver.version>1.4.3</phantomjsdriver.version>
         <webdrivermanager.version>2.2.2</webdrivermanager.version>
         <testng.version>6.13</testng.version>
@@ -69,7 +68,12 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-server</artifactId>
-            <version>${selenium-server.version}</version>
+            <version>${selenium.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-remote-driver</artifactId>
+            <version>${selenium.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -85,7 +89,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>${selenium-java.version}</version>
+            <version>${selenium.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
