@@ -30,7 +30,7 @@ public class RegisterChrome {
         ChromeDriverManager.getInstance().setup();
         GridLauncherV3.main(new String[] { "-role", "node", "-hub",
                 "http://localhost:4444/grid/register", "-browser",
-                "browserName=chrome,version=59", "-port", "5555" });
+                "browserName=chrome", "-port", "5555" });
     }
 
 }
