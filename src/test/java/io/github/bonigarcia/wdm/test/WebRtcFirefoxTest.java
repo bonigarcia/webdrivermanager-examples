@@ -28,7 +28,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-import io.github.bonigarcia.wdm.FirefoxDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
  * WebRTC test with Firefox.
@@ -42,7 +42,7 @@ public class WebRtcFirefoxTest {
 
     @BeforeClass
     public static void setupClass() {
-        FirefoxDriverManager.getInstance().setup();
+        WebDriverManager.firefoxdriver().setup();
     }
 
     @Before

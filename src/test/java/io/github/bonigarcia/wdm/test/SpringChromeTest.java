@@ -31,8 +31,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.SpringTestDemoApp;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
  * Test against a spring-boot application.
@@ -51,7 +51,7 @@ public class SpringChromeTest {
 
     @BeforeClass
     public static void setupClass() {
-        ChromeDriverManager.getInstance().setup();
+        WebDriverManager.chromedriver().setup();
     }
 
     @Before

@@ -38,7 +38,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.github.bonigarcia.wdm.PhantomJsDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
  * Performance test using several concurrent PhantomJS browsers (headless).
@@ -56,7 +56,7 @@ public class PerformancePhantomJsTest {
 
     @BeforeClass
     public static void setupClass() {
-        PhantomJsDriverManager.getInstance().setup();
+        WebDriverManager.phantomjs().setup();
     }
 
     @Before

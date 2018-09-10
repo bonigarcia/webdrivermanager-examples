@@ -35,7 +35,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.github.bonigarcia.wdm.FirefoxDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
  * Example which opens a new Tab with Java Robot using Firefox as browser.
@@ -49,7 +49,7 @@ public class OpenNewTabFirefoxTest {
 
     @BeforeClass
     public static void setupClass() {
-        FirefoxDriverManager.getInstance().setup();
+        WebDriverManager.firefoxdriver().setup();
     }
 
     @Before

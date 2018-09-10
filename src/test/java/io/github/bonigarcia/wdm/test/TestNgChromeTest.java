@@ -22,7 +22,7 @@ import static org.junit.Assert.assertThat;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
  * Test with TestNG in parallel.
@@ -34,7 +34,7 @@ public class TestNgChromeTest {
 
     @BeforeTest(alwaysRun = true)
     public void beforeTest() {
-        ChromeDriverManager.getInstance().setup();
+        WebDriverManager.chromedriver().setup();
     }
 
     @Test

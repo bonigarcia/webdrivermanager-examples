@@ -30,7 +30,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.github.bonigarcia.wdm.EdgeDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
  * Test with Edge.
@@ -44,7 +44,7 @@ public class EdgeTest {
 
     @BeforeClass
     public static void setupClass() {
-        EdgeDriverManager.getInstance().setup();
+        WebDriverManager.edgedriver().setup();
     }
 
     @Before

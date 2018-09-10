@@ -23,7 +23,7 @@ import static org.junit.Assert.assertThat;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.FirefoxDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
  * Test with TestNG in parallel.
@@ -35,7 +35,7 @@ public class TestNgFirefoxTest {
 
     @BeforeClass(alwaysRun = true)
     public void beforeTest() {
-        FirefoxDriverManager.getInstance().setup();
+        WebDriverManager.firefoxdriver().setup();
     }
 
     @Test

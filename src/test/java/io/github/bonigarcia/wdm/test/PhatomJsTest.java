@@ -30,7 +30,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.github.bonigarcia.wdm.PhantomJsDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
  * Test with PhantomJS.
@@ -44,7 +44,7 @@ public class PhatomJsTest {
 
     @BeforeClass
     public static void setupClass() {
-        PhantomJsDriverManager.getInstance().setup();
+        WebDriverManager.phantomjs().setup();
     }
 
     @Before
