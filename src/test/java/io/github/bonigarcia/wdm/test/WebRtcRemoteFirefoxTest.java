@@ -18,8 +18,7 @@
 package io.github.bonigarcia.wdm.test;
 
 import static org.openqa.selenium.OutputType.BASE64;
-import static org.openqa.selenium.firefox.FirefoxDriver.PROFILE;
-import static org.openqa.selenium.remote.DesiredCapabilities.firefox;
+import static org.openqa.selenium.firefox.FirefoxOptions.FIREFOX_OPTIONS;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -29,7 +28,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -45,11 +44,11 @@ public class WebRtcRemoteFirefoxTest {
 
     @Before
     public void setup() throws MalformedURLException {
-        DesiredCapabilities capabilities = firefox();
-        FirefoxProfile profile = new FirefoxProfile();
-        profile.setPreference("media.navigator.permission.disabled", true);
-        profile.setPreference("media.navigator.streams.fake", true);
-        capabilities.setCapability(PROFILE, profile);
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        FirefoxOptions options = new FirefoxOptions();
+        options.addPreference("media.navigator.permission.disabled", true);
+        options.addPreference("media.navigator.streams.fake", true);
+        capabilities.setCapability(FIREFOX_OPTIONS, options);
 
         driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
                 capabilities);
