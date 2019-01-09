@@ -16,7 +16,9 @@
  */
 package io.github.bonigarcia.wdm.test;
 
-import static org.junit.Assert.assertTrue;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -41,7 +43,7 @@ public class AndroidTest {
     @Before
     public void setupTest() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("platformName", "android");
+        capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("browserName", "chrome");
         capabilities.setCapability("deviceName", "Samsung Galaxy S6");
         driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"),
@@ -56,10 +58,15 @@ public class AndroidTest {
     }
 
     @Test
-    public void test() {
-        driver.get("https://en.wikipedia.org/wiki/Main_Page");
-        assertTrue(
-                driver.getTitle().equals("Wikipedia, the free encyclopedia"));
+    public void test() throws InterruptedException {
+        driver.get("https://bonigarcia.github.io/selenium-jupiter/");
+        assertThat(driver.getTitle(),
+                containsString("JUnit 5 extension for Selenium"));
+
+        Thread.sleep(5000);
+
+        driver.get("https://bonigarcia.github.io/");
+        assertThat(driver.getTitle(), equalTo("Boni García"));
     }
 
 }
