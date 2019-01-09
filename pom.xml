@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.bonigarcia</groupId>
@@ -31,11 +32,12 @@
         <logback.version>1.2.3</logback.version>
 
         <junit.version>4.12</junit.version>
-        <selenium.version>3.13.0</selenium.version>
+        <selenium.version>3.141.59</selenium.version>
         <phantomjsdriver.version>1.4.3</phantomjsdriver.version>
-        <webdrivermanager.version>3.1.1</webdrivermanager.version>
+        <webdrivermanager.version>3.2.0</webdrivermanager.version>
         <testng.version>6.13</testng.version>
         <spring-boot.version>2.0.3.RELEASE</spring-boot.version>
+        <appium-java-client.version>7.0.0</appium-java-client.version>
 
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
 
@@ -93,6 +95,12 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>${selenium.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>phantomjsdriver</artifactId>
             <version>${phantomjsdriver.version}</version>
@@ -108,6 +116,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>${appium-java-client.version}</version>
         </dependency>
     </dependencies>
 
