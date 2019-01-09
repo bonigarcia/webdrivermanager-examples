@@ -42,9 +42,9 @@ public class AndroidTest {
     public void setupTest() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "android");
-        capabilities.setCapability("browserName", "browser");
+        capabilities.setCapability("browserName", "chrome");
         capabilities.setCapability("deviceName", "Samsung Galaxy S6");
-        driver = new RemoteWebDriver(new URL("http://172.17.0.1:4444/wd/hub"),
+        driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"),
                 capabilities);
     }
 
