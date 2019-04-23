@@ -7,13 +7,14 @@ This repository contains JUnit examples to automate the [Selenium Webdriver] bin
 
 ## Usage
 
-In order to use WebDriverManager in a Maven project, first add the following dependency to your `pom.xml`:
+In order to use WebDriverManager from tests in a Maven project, you need to add the following dependency in your `pom.xml` (Java 8 or upper required):
 
 ```xml
 <dependency>
-	<groupId>io.github.bonigarcia</groupId>
-	<artifactId>webdrivermanager</artifactId>
-	<version>3.4.0</version>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>3.4.0</version>
+    <scope>test</scope>
 </dependency>
 ```
 
