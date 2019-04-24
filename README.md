@@ -18,6 +18,14 @@ In order to use WebDriverManager from tests in a Maven project, you need to add 
 </dependency>
 ```
 
+... or in Gradle project:
+
+```
+dependencies {
+    testCompile("io.github.bonigarcia:webdrivermanager:3.4.0")
+}
+```
+
 Then you can let WebDriverManager to do manage WebDriver binaries for your application/test. For example, as a JUnit test using Chrome browser:
 
 ```java
