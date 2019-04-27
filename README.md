@@ -92,6 +92,11 @@ public class FirefoxTest {
 }
 ```
 
+## Help
+
+If you have questions on how to use WebDriverManager properly with a special configuration or suchlike, please consider asking a question on [Stack Overflow] and tag it with  *webdrivermanager-java*.
+
+
 ## About
 
 WebDriverManager-Examples (Copyright &copy; 2016-2019) is a personal project of [Boni Garcia] licensed under [Apache 2.0 License]. Comments, questions and suggestions are always very [welcome][WebDriverManager-Examples issues]!
