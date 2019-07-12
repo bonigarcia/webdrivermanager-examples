@@ -37,7 +37,7 @@
         <webdrivermanager.version>3.6.1</webdrivermanager.version>
         <testng.version>6.13</testng.version>
         <spring-boot.version>2.1.2.RELEASE</spring-boot.version>
-        <appium-java-client.version>7.0.0</appium-java-client.version>
+        <appium-java-client.version>7.1.0</appium-java-client.version>
 
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
 
