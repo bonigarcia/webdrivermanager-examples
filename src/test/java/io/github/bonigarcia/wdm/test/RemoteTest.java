@@ -41,8 +41,11 @@ public class RemoteTest {
 
     @Before
     public void setupTest() throws MalformedURLException {
-        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browserName", "chrome");
+        capabilities.setCapability("version", "77.0");
+
+        driver = new RemoteWebDriver(new URL("http://localhost:4042/wd/hub"),
                 capabilities);
     }
 
