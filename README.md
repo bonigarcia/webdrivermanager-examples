@@ -18,7 +18,7 @@ In order to use WebDriverManager from tests in a Maven project, you need to add 
 <dependency>
     <groupId>io.github.bonigarcia</groupId>
     <artifactId>webdrivermanager</artifactId>
-    <version>3.7.1</version>
+    <version>3.8.1</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -27,7 +27,7 @@ In order to use WebDriverManager from tests in a Maven project, you need to add 
 
 ```
 dependencies {
-    testCompile("io.github.bonigarcia:webdrivermanager:3.7.1")
+    testCompile("io.github.bonigarcia:webdrivermanager:3.8.1")
 }
 ```
 
