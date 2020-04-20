@@ -116,7 +116,7 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 
 ## About
 
-WebDriverManager-Examples (Copyright &copy; 2016-2019) is a personal project of [Boni Garcia] licensed under [Apache 2.0 License]. Comments, questions and suggestions are always very [welcome][WebDriverManager-Examples issues]!
+WebDriverManager-Examples (Copyright &copy; 2016-2020) is a personal project of [Boni Garcia] licensed under [Apache 2.0 License]. Comments, questions and suggestions are always very [welcome][WebDriverManager-Examples issues]!
 
 [Apache 2.0 License]: http://www.apache.org/licenses/LICENSE-2.0
 [Boni Garcia]: http://bonigarcia.github.io/
