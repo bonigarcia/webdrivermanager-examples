@@ -10,6 +10,9 @@
 
 This repository contains JUnit examples to automate the [Selenium Webdriver] binaries management using [WebDriverManager]. These examples are open source, released under the terms of [Apache 2.0 License].
 
+**WebDriverManager-Examples** is being sponsored by the following tool; please help to support us by taking a look and signing up to a free trial:<br>
+<a href="https://tracking.gitads.io/?repo=webdrivermanager-examples"><img src="https://images.gitads.io/webdrivermanager-examples" alt="GitAds"/></a>
+
 ## Usage
 
 In order to use WebDriverManager from tests in a Maven project, you need to add the following dependency in your `pom.xml` (Java 8 or upper required):
