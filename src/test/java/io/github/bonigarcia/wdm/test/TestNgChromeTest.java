@@ -40,7 +40,9 @@ public class TestNgChromeTest {
     @BeforeTest(alwaysRun = true)
     public void beforeTest() {
         log.debug("TestNgChromeTest @BeforeTest");
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().config().setAvoidAutoReset(true);
+        WebDriverManager.chromedriver().clearResolutionCache().forceDownload()
+                .setup();
     }
 
     @Test
