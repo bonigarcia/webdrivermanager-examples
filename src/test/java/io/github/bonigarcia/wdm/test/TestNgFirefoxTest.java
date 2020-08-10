@@ -17,9 +17,12 @@
 
 package io.github.bonigarcia.wdm.test;
 
+import static java.lang.invoke.MethodHandles.lookup;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertThat;
+import static org.slf4j.LoggerFactory.getLogger;
 
+import org.slf4j.Logger;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -33,13 +36,19 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 public class TestNgFirefoxTest {
 
+    static final Logger log = getLogger(lookup().lookupClass());
+
     @BeforeClass(alwaysRun = true)
     public void beforeTest() {
-        WebDriverManager.firefoxdriver().setup();
+        log.debug("TestNgFirefoxTest @BeforeTest");
+        WebDriverManager.firefoxdriver().config().setAvoidAutoReset(true);
+        WebDriverManager.firefoxdriver().clearResolutionCache().forceDownload()
+                .setup();
     }
 
     @Test
     public void testFirefox() {
+        log.debug("TestNgFirefoxTest @Test");
         assertThat(System.getProperty("webdriver.gecko.driver"),
                 containsString("geckodriver"));
     }
