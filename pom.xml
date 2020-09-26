@@ -28,15 +28,15 @@
     </licenses>
 
     <properties>
-        <slf4j.version>1.7.25</slf4j.version>
+        <slf4j.version>1.7.30</slf4j.version>
         <logback.version>1.2.3</logback.version>
 
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13</junit.version>
         <selenium.version>3.141.59</selenium.version>
         <phantomjsdriver.version>1.4.3</phantomjsdriver.version>
         <webdrivermanager.version>4.2.2</webdrivermanager.version>
         <testng.version>7.3.0</testng.version>
-        <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
+        <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
         <appium-java-client.version>7.1.0</appium-java-client.version>
 
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
@@ -55,12 +55,10 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>${logback.version}</version>
         </dependency>
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
@@ -70,7 +68,6 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-api</artifactId>
-            <version>${selenium.version}</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -80,7 +77,6 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-remote-driver</artifactId>
-            <version>${selenium.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -90,13 +86,11 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>${selenium.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -135,22 +129,9 @@
                         <version>${maven-surefire-plugin.version}</version>
                     </dependency>
                 </dependencies>
-                <!--
-                <inherited>true</inherited>
-                <executions>
-                    <execution>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src\test\resources\parallel.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                </configuration>
-                -->
+                <!-- <inherited>true</inherited> <executions> <execution> <phase>test</phase> 
+                    <goals> <goal>test</goal> </goals> </execution> </executions> <configuration> <suiteXmlFiles> 
+                    <suiteXmlFile>src\test\resources\parallel.xml</suiteXmlFile> </suiteXmlFiles> </configuration> -->
             </plugin>
         </plugins>
     </build>
