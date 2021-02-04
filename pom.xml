@@ -34,7 +34,7 @@
         <junit.version>4.13</junit.version>
         <selenium.version>3.141.59</selenium.version>
         <phantomjsdriver.version>1.4.3</phantomjsdriver.version>
-        <webdrivermanager.version>4.2.2</webdrivermanager.version>
+        <webdrivermanager.version>4.3.1</webdrivermanager.version>
         <testng.version>7.3.0</testng.version>
         <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
         <appium-java-client.version>7.1.0</appium-java-client.version>
