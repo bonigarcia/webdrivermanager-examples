@@ -1,4 +1,5 @@
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.bonigarcia/webdrivermanager.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3Aio.github.bonigarcia%20a%3Awebdrivermanager)
+[![Build Status](https://github.com/bonigarcia/webdrivermanager-examples/workflows/build/badge.svg)](https://github.com/bonigarcia/wdmwebdrivermanager-examples/actions)
 [![badge-jdk](https://img.shields.io/badge/jdk-8-green.svg)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 [![License badge](https://img.shields.io/badge/license-Apache2-green.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Backers on Open Collective](https://opencollective.com/webdrivermanager/backers/badge.svg)](#backers)
@@ -8,7 +9,7 @@
 
 # WebDriverManager Examples [![][Logo]][GitHub Repository]
 
-This repository contains JUnit examples to automate the [Selenium Webdriver] binaries management using [WebDriverManager]. These examples are open source, released under the terms of [Apache 2.0 License].
+This repository contains JUnit examples to automate the [Selenium WebDriver] binaries management using [WebDriverManager]. These examples are open source, released under the terms of [Apache 2.0 License].
 
 ## Usage
 
@@ -18,7 +19,7 @@ In order to use WebDriverManager from tests in a Maven project, you need to add 
 <dependency>
     <groupId>io.github.bonigarcia</groupId>
     <artifactId>webdrivermanager</artifactId>
-    <version>4.3.1</version>
+    <version>${wdm.version}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -27,7 +28,7 @@ In order to use WebDriverManager from tests in a Maven project, you need to add 
 
 ```
 dependencies {
-    testImplementation("io.github.bonigarcia:webdrivermanager:4.3.1")
+    testImplementation("io.github.bonigarcia:webdrivermanager:${wdm.version}")
 }
 ```
 
@@ -116,12 +117,11 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 
 ## About
 
-WebDriverManager-Examples (Copyright &copy; 2016-2021) is a personal project of [Boni Garcia] licensed under [Apache 2.0 License]. Comments, questions and suggestions are always very [welcome][WebDriverManager-Examples issues]!
+WebDriverManager (Copyright &copy; 2015-2021) is a personal project of [Boni Garcia] licensed under [Apache 2.0 License].
 
 [Apache 2.0 License]: http://www.apache.org/licenses/LICENSE-2.0
 [Boni Garcia]: http://bonigarcia.github.io/
-[Selenium Webdriver]: http://docs.seleniumhq.org/projects/webdriver/
+[Selenium WebDriver]: http://docs.seleniumhq.org/projects/webdriver/
 [WebDriverManager]:https://github.com/bonigarcia/webdrivermanager/
-[WebDriverManager-Examples issues]: https://github.com/bonigarcia/webdrivermanager-examples/issues
 [Logo]: http://bonigarcia.github.io/img/webdrivermanager.png
 [GitHub Repository]: https://github.com/bonigarcia/webdrivermanager-examples
