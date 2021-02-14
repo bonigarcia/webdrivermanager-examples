@@ -2,41 +2,20 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>io.github.bonigarcia</groupId>
     <artifactId>webdrivermanager-examples</artifactId>
     <version>1.0.0</version>
-
-    <name>WebdriverManager Examples</name>
-    <description>
-		Examples of usage of WebdriverManager as JUnit test cases.
-	</description>
-    <url>https://github.com/bonigarcia/webdrivermanager-examples</url>
-
-    <developers>
-        <developer>
-            <id>bonigarcia</id>
-            <name>Boni Garcia</name>
-            <email>boni.gg@gmail.com</email>
-        </developer>
-    </developers>
-
-    <licenses>
-        <license>
-            <name>Apache 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
-        </license>
-    </licenses>
 
     <properties>
         <slf4j.version>1.7.30</slf4j.version>
         <logback.version>1.2.3</logback.version>
 
-        <junit.version>4.13</junit.version>
+        <junit.version>4.13.1</junit.version>
         <selenium.version>3.141.59</selenium.version>
         <phantomjsdriver.version>1.4.4</phantomjsdriver.version>
         <webdrivermanager.version>4.3.1</webdrivermanager.version>
         <testng.version>7.3.0</testng.version>
-        <spring-boot.version>2.4.2</spring-boot.version>
         <appium-java-client.version>7.4.1</appium-java-client.version>
 
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
@@ -55,10 +34,12 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
         </dependency>
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
@@ -68,6 +49,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-api</artifactId>
+            <version>${selenium.version}</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -77,20 +59,19 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-remote-driver</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${selenium.version}</version>
         </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -103,11 +84,6 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -135,17 +111,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
 </project>
