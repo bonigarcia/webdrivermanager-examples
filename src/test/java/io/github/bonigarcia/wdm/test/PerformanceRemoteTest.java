@@ -30,6 +30,7 @@ import java.util.concurrent.ExecutorService;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
@@ -43,6 +44,7 @@ import org.openqa.selenium.remote.SessionId;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
+@Ignore
 public class PerformanceRemoteTest {
 
     private static final int NUMBER_OF_BROWSERS = 50;

@@ -25,6 +25,7 @@ import java.net.URL;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -37,6 +38,7 @@ import io.appium.java_client.android.AndroidDriver;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
+@Ignore
 public class AppiumTest {
 
     private WebDriver driver;

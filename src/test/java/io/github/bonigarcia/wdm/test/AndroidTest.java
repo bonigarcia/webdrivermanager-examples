@@ -25,6 +25,7 @@ import java.net.URL;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -36,6 +37,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
+@Ignore
 public class AndroidTest {
 
     private WebDriver driver;

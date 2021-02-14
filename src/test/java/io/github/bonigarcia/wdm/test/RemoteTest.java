@@ -17,17 +17,22 @@
 
 package io.github.bonigarcia.wdm.test;
 
-import static org.junit.Assert.assertTrue;
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.slf4j.Logger;
 
 /**
  * Test with Chrome in Selenium Grid.
@@ -35,7 +40,10 @@ import org.openqa.selenium.remote.RemoteWebDriver;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
+@Ignore
 public class RemoteTest {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     private WebDriver driver;
 
@@ -43,9 +51,8 @@ public class RemoteTest {
     public void setupTest() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("version", "77.0");
 
-        driver = new RemoteWebDriver(new URL("http://localhost:4042/wd/hub"),
+        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
                 capabilities);
     }
 
@@ -58,9 +65,11 @@ public class RemoteTest {
 
     @Test
     public void test() {
-        driver.get("https://en.wikipedia.org/wiki/Main_Page");
-        assertTrue(
-                driver.getTitle().equals("Wikipedia, the free encyclopedia"));
+        String sutUrl = "https://bonigarcia.github.io/selenium-jupiter/";
+        driver.get(sutUrl);
+        String title = driver.getTitle();
+        log.debug("The title of {} is {}", sutUrl, title);
+        assertThat(title, containsString("JUnit 5 extension for Selenium"));
     }
 
 }
