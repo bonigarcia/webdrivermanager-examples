@@ -16,6 +16,11 @@
  */
 package io.github.bonigarcia.wdm.test;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -23,6 +28,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.slf4j.Logger;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -34,6 +40,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 public class ChromeHeadlessTest {
 
+    static final Logger log = getLogger(lookup().lookupClass());
+
     private WebDriver driver;
 
     @BeforeClass
@@ -44,10 +52,7 @@ public class ChromeHeadlessTest {
     @Before
     public void setupTest() {
         ChromeOptions options = new ChromeOptions();
-        // Tested in Google Chrome 59 on Linux. More info on:
-        // https://developers.google.com/web/updates/2017/04/headless-chrome
         options.addArguments("--headless");
-        options.addArguments("--disable-gpu");
         driver = new ChromeDriver(options);
     }
 
@@ -60,9 +65,11 @@ public class ChromeHeadlessTest {
 
     @Test
     public void test() {
-        driver.get("https://en.wikipedia.org/wiki/Main_Page");
+        String sutUrl = "https://bonigarcia.github.io/selenium-jupiter/";
+        driver.get(sutUrl);
         String title = driver.getTitle();
-        System.out.println(title);
+        log.debug("The title of {} is {}", sutUrl, title);
+        assertThat(title, containsString("JUnit 5 extension for Selenium"));
     }
 
 }
