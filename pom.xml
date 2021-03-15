@@ -16,7 +16,7 @@
         <phantomjsdriver.version>1.4.4</phantomjsdriver.version>
         <webdrivermanager.version>4.3.1</webdrivermanager.version>
         <testng.version>7.4.0</testng.version>
-        <appium-java-client.version>7.4.1</appium-java-client.version>
+        <appium-java-client.version>7.5.0</appium-java-client.version>
 
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 
