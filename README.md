@@ -1,10 +1,10 @@
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.bonigarcia/webdrivermanager.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3Aio.github.bonigarcia%20a%3Awebdrivermanager)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.bonigarcia/webdrivermanager.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3Aio.github.bonigarcia%20a%3Awebdrivermanager)
 [![Build Status](https://github.com/bonigarcia/webdrivermanager-examples/workflows/build/badge.svg)](https://github.com/bonigarcia/webdrivermanager-examples/actions)
-[![badge-jdk](https://img.shields.io/badge/jdk-8-green.svg)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-[![License badge](https://img.shields.io/badge/license-Apache2-green.svg)](http://www.apache.org/licenses/LICENSE-2.0)
+[![badge-jdk](https://img.shields.io/badge/jdk-8-green.svg)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+[![License badge](https://img.shields.io/badge/license-Apache2-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Backers on Open Collective](https://opencollective.com/webdrivermanager/backers/badge.svg)](#backers)
 [![Sponsors on Open Collective](https://opencollective.com/webdrivermanager/sponsors/badge.svg)](#sponsors)
-[![Support badge](https://img.shields.io/badge/stackoverflow-webdrivermanager_java-green.svg)](http://stackoverflow.com/questions/tagged/webdrivermanager-java)
+[![Support badge](https://img.shields.io/badge/stackoverflow-webdrivermanager_java-green.svg?logo=stackoverflow)](https://stackoverflow.com/questions/tagged/webdrivermanager-java)
 [![Twitter Follow](https://img.shields.io/twitter/follow/boni_gg.svg?style=social)](https://twitter.com/boni_gg)
 
 # WebDriverManager Examples [![][Logo]][GitHub Repository]
@@ -119,10 +119,10 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 
 WebDriverManager (Copyright &copy; 2015-2021) is a personal project of [Boni Garcia] licensed under [Apache 2.0 License].
 
-[Apache 2.0 License]: http://www.apache.org/licenses/LICENSE-2.0
-[Boni Garcia]: http://bonigarcia.github.io/
-[Selenium WebDriver]: http://docs.seleniumhq.org/projects/webdriver/
+[Apache 2.0 License]: https://www.apache.org/licenses/LICENSE-2.0
+[Boni Garcia]: https://bonigarcia.github.io/
+[Selenium WebDriver]: https://docs.seleniumhq.org/projects/webdriver/
 [WebDriverManager]:https://github.com/bonigarcia/webdrivermanager/
-[Logo]: http://bonigarcia.github.io/img/webdrivermanager.png
+[Logo]: https://bonigarcia.github.io/img/webdrivermanager.png
 [GitHub Repository]: https://github.com/bonigarcia/webdrivermanager-examples
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/webdrivermanager-java
