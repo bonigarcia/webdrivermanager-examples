@@ -37,12 +37,12 @@ import io.appium.java_client.android.AndroidDriver;
  * @since 1.0.0
  */
 @Disabled
-public class AppiumTest {
+class AppiumTest {
 
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeEach
-    public void setupTest() throws MalformedURLException {
+    void setupTest() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "chrome");
         capabilities.setCapability("deviceName", "Samsung Galaxy S6");
@@ -51,14 +51,14 @@ public class AppiumTest {
     }
 
     @AfterEach
-    public void teardown() {
+    void teardown() {
         if (driver != null) {
             driver.quit();
         }
     }
 
     @Test
-    public void test() throws InterruptedException {
+    void test() throws InterruptedException {
         driver.get("https://bonigarcia.github.io/selenium-jupiter/");
         assertThat(driver.getTitle())
                 .contains("JUnit 5 extension for Selenium");

@@ -44,14 +44,14 @@ import org.slf4j.Logger;
  * @since 1.0.0
  */
 @Disabled
-public class WebRtcRemoteChromeTest {
+class WebRtcRemoteChromeTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
 
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeEach
-    public void setup() throws MalformedURLException {
+    void setup() throws MalformedURLException {
         DesiredCapabilities capabilities = chrome();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--use-fake-ui-for-media-stream");
@@ -63,14 +63,14 @@ public class WebRtcRemoteChromeTest {
     }
 
     @AfterEach
-    public void teardown() {
+    void teardown() {
         if (driver != null) {
             driver.quit();
         }
     }
 
     @Test
-    public void test() {
+    void test() {
         driver.get(
                 "https://webrtc.github.io/samples/src/content/devices/input-output/");
         String screenshotBase64 = ((TakesScreenshot) driver)

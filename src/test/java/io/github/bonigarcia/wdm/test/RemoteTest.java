@@ -40,14 +40,14 @@ import org.slf4j.Logger;
  * @since 1.0.0
  */
 @Disabled
-public class RemoteTest {
+class RemoteTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
 
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeEach
-    public void setupTest() throws MalformedURLException {
+    void setupTest() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "chrome");
 
@@ -56,14 +56,14 @@ public class RemoteTest {
     }
 
     @AfterEach
-    public void teardown() {
+    void teardown() {
         if (driver != null) {
             driver.quit();
         }
     }
 
     @Test
-    public void test() {
+    void test() {
         String sutUrl = "https://bonigarcia.github.io/selenium-jupiter/";
         driver.get(sutUrl);
         String title = driver.getTitle();

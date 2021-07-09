@@ -43,14 +43,14 @@ import org.slf4j.Logger;
  * @since 1.0.0
  */
 @Disabled
-public class WebRtcRemoteFirefoxTest {
+class WebRtcRemoteFirefoxTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
 
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeEach
-    public void setup() throws MalformedURLException {
+    void setup() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         FirefoxOptions options = new FirefoxOptions();
         options.addPreference("media.navigator.permission.disabled", true);
@@ -62,14 +62,14 @@ public class WebRtcRemoteFirefoxTest {
     }
 
     @AfterEach
-    public void teardown() {
+    void teardown() {
         if (driver != null) {
             driver.quit();
         }
     }
 
     @Test
-    public void test() {
+    void test() {
         driver.get(
                 "https://webrtc.github.io/samples/src/content/devices/input-output/");
         String screenshotBase64 = ((TakesScreenshot) driver)

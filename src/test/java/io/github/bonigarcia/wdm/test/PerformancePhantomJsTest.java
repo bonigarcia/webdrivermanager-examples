@@ -47,34 +47,34 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-public class PerformancePhantomJsTest {
+class PerformancePhantomJsTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
 
-    private static final int NUMBER_OF_BROWSERS = 5;
-    private List<WebDriver> driverList = new ArrayList<>(NUMBER_OF_BROWSERS);
+    static final int NUMBER_OF_BROWSERS = 5;
+    List<WebDriver> driverList = new ArrayList<>(NUMBER_OF_BROWSERS);
 
     @BeforeAll
-    public static void setupClass() {
+    static void setupClass() {
         WebDriverManager.phantomjs().setup();
     }
 
     @BeforeEach
-    public void setupTest() {
+    void setupTest() {
         for (int i = 0; i < NUMBER_OF_BROWSERS; i++) {
             driverList.add(new PhantomJSDriver());
         }
     }
 
     @AfterEach
-    public void teardown() {
+    void teardown() {
         for (int i = 0; i < NUMBER_OF_BROWSERS; i++) {
             driverList.get(i).close();
         }
     }
 
     @Test
-    public void test() throws InterruptedException {
+    void test() throws InterruptedException {
         ExecutorService executor = Executors
                 .newFixedThreadPool(NUMBER_OF_BROWSERS);
         final CountDownLatch latch = new CountDownLatch(NUMBER_OF_BROWSERS);
@@ -98,7 +98,7 @@ public class PerformancePhantomJsTest {
         executor.shutdown();
     }
 
-    private void singleTestExcution(WebDriver driver) {
+    void singleTestExcution(WebDriver driver) {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         driver.get("https://en.wikipedia.org/wiki/Main_Page");
 

@@ -38,12 +38,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-public class MultipleBrowsersTest {
+class MultipleBrowsersTest {
 
-    private WebDriver driver;
+    WebDriver driver;
 
     @AfterEach
-    public void teardown() {
+    void teardown() {
         if (driver != null) {
             driver.quit();
         }
@@ -51,7 +51,7 @@ public class MultipleBrowsersTest {
 
     @ParameterizedTest
     @ValueSource(classes = { ChromeDriver.class, FirefoxDriver.class })
-    public void test(Class<? extends WebDriver> driverClass) throws Exception {
+    void test(Class<? extends WebDriver> driverClass) throws Exception {
         WebDriverManager.getInstance(driverClass).setup();
         driver = driverClass.getDeclaredConstructor().newInstance();
 

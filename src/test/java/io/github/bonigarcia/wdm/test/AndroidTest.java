@@ -36,12 +36,12 @@ import org.openqa.selenium.remote.RemoteWebDriver;
  * @since 1.0.0
  */
 @Disabled
-public class AndroidTest {
+class AndroidTest {
 
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeEach
-    public void setupTest() throws MalformedURLException {
+    void setupTest() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("browserName", "chrome");
@@ -51,14 +51,14 @@ public class AndroidTest {
     }
 
     @AfterEach
-    public void teardown() {
+    void teardown() {
         if (driver != null) {
             driver.quit();
         }
     }
 
     @Test
-    public void test() throws InterruptedException {
+    void test() throws InterruptedException {
         driver.get("https://bonigarcia.github.io/selenium-jupiter/");
         assertThat(driver.getTitle())
                 .contains("JUnit 5 extension for Selenium");

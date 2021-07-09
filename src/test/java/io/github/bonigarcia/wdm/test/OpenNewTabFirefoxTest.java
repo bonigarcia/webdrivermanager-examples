@@ -46,31 +46,31 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-public class OpenNewTabFirefoxTest {
+class OpenNewTabFirefoxTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
 
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeAll
-    public static void setupClass() {
+    static void setupClass() {
         WebDriverManager.firefoxdriver().setup();
     }
 
     @BeforeEach
-    public void setupTest() {
+    void setupTest() {
         driver = new FirefoxDriver();
     }
 
     @AfterEach
-    public void teardown() {
+    void teardown() {
         if (driver != null) {
             driver.quit();
         }
     }
 
     @Test
-    public void test() throws Exception {
+    void test() throws Exception {
         // Open URL in default tab
         driver.get("https://wikipedia.org/");
 

@@ -37,33 +37,33 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-public class ChromeHeadlessTest {
+class ChromeHeadlessTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
 
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeAll
-    public static void setupClass() {
+    static void setupClass() {
         WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
-    public void setupTest() {
+    void setupTest() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
     }
 
     @AfterEach
-    public void teardown() {
+    void teardown() {
         if (driver != null) {
             driver.quit();
         }
     }
 
     @Test
-    public void test() {
+    void test() {
         String sutUrl = "https://bonigarcia.github.io/selenium-jupiter/";
         driver.get(sutUrl);
         String title = driver.getTitle();

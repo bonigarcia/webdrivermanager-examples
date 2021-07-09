@@ -32,12 +32,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-public class TestNgChromeTest {
+class TestNgChromeTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
 
     @BeforeTest(alwaysRun = true)
-    public void beforeTest() {
+    void beforeTest() {
         log.debug("TestNgChromeTest @BeforeEachTest");
         WebDriverManager.chromedriver().config().setAvoidAutoReset(true);
         WebDriverManager.chromedriver().clearResolutionCache().forceDownload()
@@ -45,7 +45,7 @@ public class TestNgChromeTest {
     }
 
     @Test
-    public void testChrome() {
+    void testChrome() {
         log.debug("TestNgChromeTest @Test");
         assertThat(System.getProperty("webdriver.chrome.driver"))
                 .contains("chromedriver");

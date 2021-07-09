@@ -35,26 +35,26 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-public class ChromeAndFirefoxTest {
+class ChromeAndFirefoxTest {
 
     protected WebDriver chrome;
 
     protected WebDriver firefox;
 
     @BeforeAll
-    public static void setupClass() {
+    static void setupClass() {
         WebDriverManager.chromedriver().setup();
         WebDriverManager.firefoxdriver().setup();
     }
 
     @BeforeEach
-    public void setupTest() {
+    void setupTest() {
         chrome = new ChromeDriver();
         firefox = new FirefoxDriver();
     }
 
     @AfterEach
-    public void teardown() {
+    void teardown() {
         if (chrome != null) {
             chrome.quit();
         }
@@ -64,7 +64,7 @@ public class ChromeAndFirefoxTest {
     }
 
     @Test
-    public void test() {
+    void test() {
         // Test data
         int timeout = 30;
         String sutUrl = "https://en.wikipedia.org/wiki/Main_Page";

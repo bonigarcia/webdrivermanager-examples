@@ -37,14 +37,14 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-public class StabilityTest {
+class StabilityTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
 
-    private static final int NUM_THREADS = 10;
+    static final int NUM_THREADS = 10;
 
     @Test
-    public void test() throws InterruptedException {
+    void test() throws InterruptedException {
         CountDownLatch latch = new CountDownLatch(NUM_THREADS);
         ExecutorService executorService = newFixedThreadPool(NUM_THREADS);
 

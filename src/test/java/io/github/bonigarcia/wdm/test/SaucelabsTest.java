@@ -39,19 +39,19 @@ import org.slf4j.Logger;
  * @since 1.0.0
  */
 @Disabled
-public class SaucelabsTest {
+class SaucelabsTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
 
-    private WebDriver driver;
+    WebDriver driver;
 
-    public static final String USERNAME = "YOUR_USERNAME";
-    public static final String ACCESS_KEY = "YOUR_ACCESS_KEY";
-    public static final String URL = "https://" + USERNAME + ":" + ACCESS_KEY
+    static final String USERNAME = "YOUR_USERNAME";
+    static final String ACCESS_KEY = "YOUR_ACCESS_KEY";
+    static final String URL = "https://" + USERNAME + ":" + ACCESS_KEY
             + "@ondemand.saucelabs.com:443/wd/hub";
 
     @BeforeEach
-    public void setupTest() throws MalformedURLException {
+    void setupTest() throws MalformedURLException {
         DesiredCapabilities caps = DesiredCapabilities.chrome();
         caps.setCapability("platform", "Windows 10");
         caps.setCapability("version", "52.0");
@@ -60,14 +60,14 @@ public class SaucelabsTest {
     }
 
     @AfterEach
-    public void teardown() {
+    void teardown() {
         if (driver != null) {
             driver.quit();
         }
     }
 
     @Test
-    public void test() throws InterruptedException {
+    void test() throws InterruptedException {
         driver.get("https://en.wikipedia.org/wiki/Main_Page");
         String title = driver.getTitle();
         log.debug("The title is {}", title);

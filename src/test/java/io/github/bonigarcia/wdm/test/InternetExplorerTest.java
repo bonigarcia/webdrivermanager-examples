@@ -36,29 +36,29 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @since 1.0.0
  */
 @Disabled
-public class InternetExplorerTest {
+class InternetExplorerTest {
 
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeAll
-    public static void setupClass() {
+    static void setupClass() {
         WebDriverManager.iedriver().setup();
     }
 
     @BeforeEach
-    public void setupTest() {
+    void setupTest() {
         driver = new InternetExplorerDriver();
     }
 
     @AfterEach
-    public void teardown() {
+    void teardown() {
         if (driver != null) {
             driver.quit();
         }
     }
 
     @Test
-    public void test() {
+    void test() {
         assertThat(driver).isNotNull();
         driver.get("https://bonigarcia.github.io/selenium-jupiter/");
     }

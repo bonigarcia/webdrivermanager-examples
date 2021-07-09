@@ -45,15 +45,15 @@ import org.slf4j.Logger;
  * @since 1.0.0
  */
 @Disabled
-public class PerformanceRemoteTest {
+class PerformanceRemoteTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
 
-    private static final int NUMBER_OF_BROWSERS = 50;
-    private List<WebDriver> driverList = new CopyOnWriteArrayList<>();
+    static final int NUMBER_OF_BROWSERS = 50;
+    List<WebDriver> driverList = new CopyOnWriteArrayList<>();
 
     @BeforeEach
-    public void setupTest() throws Exception {
+    void setupTest() throws Exception {
         ExecutorService executor = newFixedThreadPool(NUMBER_OF_BROWSERS);
         CountDownLatch latch = new CountDownLatch(NUMBER_OF_BROWSERS);
         URL serverUrl = new URL("http://localhost:4444/wd/hub");
@@ -75,7 +75,7 @@ public class PerformanceRemoteTest {
     }
 
     @AfterEach
-    public void teardown() throws InterruptedException {
+    void teardown() throws InterruptedException {
         ExecutorService executor = newFixedThreadPool(NUMBER_OF_BROWSERS);
         CountDownLatch latch = new CountDownLatch(NUMBER_OF_BROWSERS);
 
@@ -100,7 +100,7 @@ public class PerformanceRemoteTest {
     }
 
     @Test
-    public void test() throws InterruptedException {
+    void test() throws InterruptedException {
         ExecutorService executor = newFixedThreadPool(NUMBER_OF_BROWSERS);
         final CountDownLatch latch = new CountDownLatch(NUMBER_OF_BROWSERS);
 
@@ -121,7 +121,7 @@ public class PerformanceRemoteTest {
         executor.shutdown();
     }
 
-    private void singleTestExcution(WebDriver driver, int index) {
+    void singleTestExcution(WebDriver driver, int index) {
         driver.get("https://en.wikipedia.org/wiki/Main_Page");
         String title = driver.getTitle();
         assertThat(title).isEqualTo("Wikipedia, the free encyclopedia");

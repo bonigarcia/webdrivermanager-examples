@@ -36,29 +36,29 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-public class CanvasTest {
+class CanvasTest {
 
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeAll
-    public static void setupClass() {
+    static void setupClass() {
         WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
-    public void setupTest() {
+    void setupTest() {
         driver = new ChromeDriver();
     }
 
     @AfterEach
-    public void teardown() {
+    void teardown() {
         if (driver != null) {
             driver.quit();
         }
     }
 
     @Test
-    public void test() throws InterruptedException {
+    void test() throws InterruptedException {
         driver.get("http://szimek.github.io/signature_pad/");
 
         WebElement canvas = driver.findElement(By.tagName("canvas"));

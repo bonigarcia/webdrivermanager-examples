@@ -39,29 +39,29 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-public class ScreenshotTest {
+class ScreenshotTest {
 
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeAll
-    public static void setupClass() {
+    static void setupClass() {
         WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
-    public void setupTest() {
+    void setupTest() {
         driver = new ChromeDriver();
     }
 
     @AfterEach
-    public void teardown() {
+    void teardown() {
         if (driver != null) {
             driver.quit();
         }
     }
 
     @Test
-    public void test() throws IOException {
+    void test() throws IOException {
         driver.get("https://en.wikipedia.org/wiki/Main_Page");
 
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(FILE);

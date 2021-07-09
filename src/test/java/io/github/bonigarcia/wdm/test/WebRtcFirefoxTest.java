@@ -36,17 +36,17 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-public class WebRtcFirefoxTest {
+class WebRtcFirefoxTest {
 
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeAll
-    public static void setupClass() {
+    static void setupClass() {
         WebDriverManager.firefoxdriver().setup();
     }
 
     @BeforeEach
-    public void setupTest() {
+    void setupTest() {
         FirefoxOptions options = new FirefoxOptions();
 
         // This flag avoids granting the access to the camera
@@ -60,14 +60,14 @@ public class WebRtcFirefoxTest {
     }
 
     @AfterEach
-    public void teardown() {
+    void teardown() {
         if (driver != null) {
             driver.quit();
         }
     }
 
     @Test
-    public void test() throws InterruptedException {
+    void test() throws InterruptedException {
         // Test data
         int timeout = 30;
         String sutUrl = "https://webrtc.github.io/samples/src/content/devices/input-output/";

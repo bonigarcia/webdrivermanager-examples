@@ -33,12 +33,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-public class TestNgFirefoxTest {
+class TestNgFirefoxTest {
 
     static final Logger log = getLogger(lookup().lookupClass());
 
     @BeforeTest(alwaysRun = true)
-    public void beforeTest() {
+    void beforeTest() {
         log.debug("TestNgFirefoxTest @BeforeEachTest");
         WebDriverManager.firefoxdriver().config().setAvoidAutoReset(true);
         WebDriverManager.firefoxdriver().clearResolutionCache().forceDownload()
@@ -46,7 +46,7 @@ public class TestNgFirefoxTest {
     }
 
     @Test
-    public void testFirefox() {
+    void testFirefox() {
         log.debug("TestNgFirefoxTest @Test");
         assertThat(System.getProperty("webdriver.gecko.driver"))
                 .contains("geckodriver");

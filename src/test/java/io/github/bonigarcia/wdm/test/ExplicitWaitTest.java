@@ -40,29 +40,29 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-public class ExplicitWaitTest {
+class ExplicitWaitTest {
 
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeAll
-    public static void setupClass() {
+    static void setupClass() {
         WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
-    public void setupTest() {
+    void setupTest() {
         driver = new ChromeDriver();
     }
 
     @AfterEach
-    public void teardown() {
+    void teardown() {
         if (driver != null) {
             driver.quit();
         }
     }
 
     @Test
-    public void test() {
+    void test() {
         driver.get("https://bonigarcia.github.io/selenium-jupiter/");
         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
                 .withTimeout(of(10, SECONDS)).pollingEvery(of(1, SECONDS))

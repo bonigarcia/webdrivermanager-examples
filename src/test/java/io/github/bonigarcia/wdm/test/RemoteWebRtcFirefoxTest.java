@@ -40,12 +40,12 @@ import org.openqa.selenium.remote.RemoteWebDriver;
  * @since 1.0.0
  */
 @Disabled
-public class RemoteWebRtcFirefoxTest {
+class RemoteWebRtcFirefoxTest {
 
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeEach
-    public void setupTest() throws MalformedURLException {
+    void setupTest() throws MalformedURLException {
         DesiredCapabilities capability = DesiredCapabilities.firefox();
         FirefoxProfile profile = new FirefoxProfile();
         profile.setPreference("media.navigator.permission.disabled", true);
@@ -56,14 +56,14 @@ public class RemoteWebRtcFirefoxTest {
     }
 
     @AfterEach
-    public void teardown() {
+    void teardown() {
         if (driver != null) {
             driver.quit();
         }
     }
 
     @Test
-    public void test() throws InterruptedException {
+    void test() throws InterruptedException {
         // Test data
         int timeout = 30;
         String sutUrl = "https://webrtc.github.io/samples/src/content/devices/input-output/";
