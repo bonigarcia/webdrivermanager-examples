@@ -24,7 +24,7 @@ import static org.slf4j.LoggerFactory.getLogger;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -55,7 +55,7 @@ public class RemoteTest {
                 capabilities);
     }
 
-    @AfterAll
+    @AfterEach
     public void teardown() {
         if (driver != null) {
             driver.quit();

@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 
-import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -66,7 +66,7 @@ public class PerformanceChromeTest {
         }
     }
 
-    @AfterAll
+    @AfterEach
     public void teardown() {
         for (int i = 0; i < NUMBER_OF_BROWSERS; i++) {
             driverList.get(i).quit();
