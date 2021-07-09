@@ -24,7 +24,7 @@ In order to use WebDriverManager from tests in a Maven project, you need to add 
 </dependency>
 ```
 
-... or in Gradle project:
+... or in a Gradle project:
 
 ```
 dependencies {
@@ -32,66 +32,66 @@ dependencies {
 }
 ```
 
-Then you can let WebDriverManager to do manage WebDriver binaries for your application/test. For example, as a JUnit test using Chrome browser:
+Then you can let WebDriverManager to manage the drivers required by Selenium WebDriver (e.g., chromedriver, geckodriver). For example, as a JUnit test using Chrome browser:
 
 ```java
 class ChromeTest {
 
-	WebDriver driver;
+    WebDriver driver;
 
-	@BeforeAll
-	static void setupClass() {
-		WebDriverManager.chromedriver().setup();
-	}
+    @BeforeAll
+    static void setupClass() {
+        WebDriverManager.chromedriver().setup();
+    }
 
-	@BeforeEach
-	void setupTest() {
-		driver = new ChromeDriver();
-	}
+    @BeforeEach
+    void setupTest() {
+        driver = new ChromeDriver();
+    }
 
-	@AfterEach
-	void teardown() {
-		if (driver != null) {
-			driver.quit();
-		}
-	}
+    @AfterEach
+    void teardown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 
-	@Test
-	void test() {
-		// Your test code here
-	}
+    @Test
+    void test() {
+        // Your test code here
+    }
 
 }
 ```
 
-... and using Firefox:
+... or using Firefox:
 
 ```java
 class FirefoxTest {
 
-	WebDriver driver;
+    WebDriver driver;
 
-	@BeforeAll
-	static void setupClass() {
-		WebDriverManager.firefoxdriver().setup();
-	}
+    @BeforeAll
+    static void setupClass() {
+        WebDriverManager.firefoxdriver().setup();
+    }
 
-	@BeforeEach
-	void setupTest() {
-		driver = new FirefoxDriver();
-	}
+    @BeforeEach
+    void setupTest() {
+        driver = new FirefoxDriver();
+    }
 
-	@AfterEach
-	void teardown() {
-		if (driver != null) {
-			driver.quit();
-		}
-	}
+    @AfterEach
+    void teardown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 
-	@Test
-	void test() {
-		// Your test code here
-	}
+    @Test
+    void test() {
+        // Your test code here
+    }
 
 }
 ```
