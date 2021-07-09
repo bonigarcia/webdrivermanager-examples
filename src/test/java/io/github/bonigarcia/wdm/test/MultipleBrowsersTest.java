@@ -22,8 +22,6 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElemen
 import static org.openqa.selenium.support.ui.ExpectedConditions.textToBePresentInElementLocated;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.By;
@@ -44,15 +42,6 @@ class MultipleBrowsersTest {
 
     WebDriver driver;
 
-    @BeforeEach
-    void setupTest(TestInfo testInfo) throws ClassNotFoundException {
-        String displayName = testInfo.getDisplayName();
-        String driverClassName = displayName
-                .substring(displayName.lastIndexOf(" ") + 1);
-        Class<?> driverClass = Class.forName(driverClassName);
-        driver = WebDriverManager.getInstance(driverClass).create();
-    }
-
     @AfterEach
     void teardown() {
         if (driver != null) {
@@ -63,6 +52,8 @@ class MultipleBrowsersTest {
     @ParameterizedTest
     @ValueSource(classes = { ChromeDriver.class, FirefoxDriver.class })
     void test(Class<? extends WebDriver> driverClass) {
+        driver = WebDriverManager.getInstance(driverClass).create();
+
         // Your test code here. For example:
         WebDriverWait wait = new WebDriverWait(driver, 30);
         driver.get("https://en.wikipedia.org/wiki/Main_Page");
