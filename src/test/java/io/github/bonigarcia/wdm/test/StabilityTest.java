@@ -16,15 +16,18 @@
  */
 package io.github.bonigarcia.wdm.test;
 
+import static java.lang.invoke.MethodHandles.lookup;
 import static java.util.concurrent.Executors.newFixedThreadPool;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.slf4j.Logger;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -35,6 +38,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @since 1.0.0
  */
 public class StabilityTest {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     private static final int NUM_THREADS = 10;
 
@@ -53,7 +58,7 @@ public class StabilityTest {
                     driver.get(
                             "https://bonigarcia.github.io/selenium-jupiter/");
                     String title = driver.getTitle();
-                    System.out.println(title);
+                    log.debug("The title is {}", title);
                     driver.quit();
                 } finally {
                     latch.countDown();

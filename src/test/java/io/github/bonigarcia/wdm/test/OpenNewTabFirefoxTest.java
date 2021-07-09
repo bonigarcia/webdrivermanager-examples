@@ -20,20 +20,23 @@ package io.github.bonigarcia.wdm.test;
 import static java.awt.event.KeyEvent.VK_CONTROL;
 import static java.awt.event.KeyEvent.VK_META;
 import static java.awt.event.KeyEvent.VK_T;
+import static java.lang.invoke.MethodHandles.lookup;
 import static org.apache.commons.lang3.SystemUtils.IS_OS_MAC;
 import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsToBe;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import java.awt.Robot;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -45,19 +48,21 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 public class OpenNewTabFirefoxTest {
 
+    static final Logger log = getLogger(lookup().lookupClass());
+
     private WebDriver driver;
 
-    @BeforeClass
+    @BeforeAll
     public static void setupClass() {
         WebDriverManager.firefoxdriver().setup();
     }
 
-    @Before
+    @BeforeEach
     public void setupTest() {
         driver = new FirefoxDriver();
     }
 
-    @After
+    @AfterAll
     public void teardown() {
         if (driver != null) {
             driver.quit();
@@ -83,7 +88,7 @@ public class OpenNewTabFirefoxTest {
 
         // Switch to new tab
         List<String> windowHandles = new ArrayList<>(driver.getWindowHandles());
-        System.err.println(windowHandles);
+        log.debug("Window handles {}", windowHandles);
         driver.switchTo().window(windowHandles.get(1));
 
         // Open other URL in second tab

@@ -21,16 +21,9 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClick
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 import static org.openqa.selenium.support.ui.ExpectedConditions.textToBePresentInElementLocated;
 
-import java.util.Arrays;
-import java.util.Collection;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameter;
-import org.junit.runners.Parameterized.Parameters;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -45,35 +38,23 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-@RunWith(Parameterized.class)
 public class MultipleBrowsersTest {
 
     private WebDriver driver;
 
-    @Parameter
-    public Class<? extends WebDriver> driverClass;
-
-    @Parameters(name = "{index}: {0}")
-    public static Collection<Object[]> data() {
-        return Arrays.asList(new Object[][] { { ChromeDriver.class },
-                { FirefoxDriver.class } });
-    }
-
-    @Before
-    public void setupTest() throws Exception {
-        WebDriverManager.getInstance(driverClass).setup();
-        driver = driverClass.newInstance();
-    }
-
-    @After
+    @AfterAll
     public void teardown() {
         if (driver != null) {
             driver.quit();
         }
     }
 
-    @Test
-    public void test() {
+    @ParameterizedTest
+    @ValueSource(classes = { ChromeDriver.class, FirefoxDriver.class })
+    public void test(Class<? extends WebDriver> driverClass) throws Exception {
+        WebDriverManager.getInstance(driverClass).setup();
+        driver = driverClass.getDeclaredConstructor().newInstance();
+
         // Your test code here. For example:
         WebDriverWait wait = new WebDriverWait(driver, 30);
         driver.get("https://en.wikipedia.org/wiki/Main_Page");

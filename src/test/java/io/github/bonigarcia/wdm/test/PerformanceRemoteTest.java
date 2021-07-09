@@ -17,26 +17,26 @@
 
 package io.github.bonigarcia.wdm.test;
 
+import static java.lang.invoke.MethodHandles.lookup;
 import static java.util.concurrent.Executors.newFixedThreadPool;
-import static org.junit.Assert.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.openqa.selenium.remote.DesiredCapabilities.chrome;
+import static org.slf4j.LoggerFactory.getLogger;
 
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ErrorCollector;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;
+import org.slf4j.Logger;
 
 /**
  * Performance test using several concurrent remote Chrome browsers.
@@ -44,27 +44,26 @@ import org.openqa.selenium.remote.SessionId;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-@Ignore
+@Disabled
 public class PerformanceRemoteTest {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     private static final int NUMBER_OF_BROWSERS = 50;
     private List<WebDriver> driverList = new CopyOnWriteArrayList<>();
 
-    @Rule
-    public ErrorCollector errorCollector = new ErrorCollector();
-
-    @Before
-    public void setupTest() throws InterruptedException {
+    @BeforeEach
+    public void setupTest() throws Exception {
         ExecutorService executor = newFixedThreadPool(NUMBER_OF_BROWSERS);
         CountDownLatch latch = new CountDownLatch(NUMBER_OF_BROWSERS);
+        URL serverUrl = new URL("http://localhost:4444/wd/hub");
 
         for (int i = 0; i < NUMBER_OF_BROWSERS; i++) {
             executor.execute(() -> {
                 try {
-                    driverList.add(new RemoteWebDriver(
-                            new URL("http://localhost:4444/wd/hub"), chrome()));
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
+                    driverList.add(new RemoteWebDriver(serverUrl, chrome()));
+                } catch (Exception e) {
+                    log.error("Some error happens", e);
                 } finally {
                     latch.countDown();
                 }
@@ -75,7 +74,7 @@ public class PerformanceRemoteTest {
         executor.shutdown();
     }
 
-    @After
+    @AfterAll
     public void teardown() throws InterruptedException {
         ExecutorService executor = newFixedThreadPool(NUMBER_OF_BROWSERS);
         CountDownLatch latch = new CountDownLatch(NUMBER_OF_BROWSERS);
@@ -88,7 +87,7 @@ public class PerformanceRemoteTest {
                     if (driver != null) {
                         driver.quit();
                     } else {
-                        System.out.println("**** Error with driver " + j);
+                        log.error("**** Error with driver {}", j);
                     }
                 } finally {
                     latch.countDown();
@@ -110,8 +109,8 @@ public class PerformanceRemoteTest {
             executor.execute(() -> {
                 try {
                     singleTestExcution(driverList.get(j), j);
-                } catch (Throwable e) {
-                    errorCollector.addError(e);
+                } catch (Exception e) {
+                    log.error("Some error happens", e);
                 } finally {
                     latch.countDown();
                 }
@@ -125,10 +124,10 @@ public class PerformanceRemoteTest {
     private void singleTestExcution(WebDriver driver, int index) {
         driver.get("https://en.wikipedia.org/wiki/Main_Page");
         String title = driver.getTitle();
-        assertTrue(title.equals("Wikipedia, the free encyclopedia"));
+        assertThat(title).isEqualTo("Wikipedia, the free encyclopedia");
 
         SessionId sessionId = ((RemoteWebDriver) driver).getSessionId();
-        System.out.println(index + " -- " + sessionId + " -- " + title);
+        log.debug("{} -- {} -- {}", index, sessionId, title);
     }
 
 }

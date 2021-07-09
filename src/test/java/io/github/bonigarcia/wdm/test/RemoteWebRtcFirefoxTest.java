@@ -23,10 +23,10 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -39,12 +39,12 @@ import org.openqa.selenium.remote.RemoteWebDriver;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-@Ignore
+@Disabled
 public class RemoteWebRtcFirefoxTest {
 
     private WebDriver driver;
 
-    @Before
+    @BeforeEach
     public void setupTest() throws MalformedURLException {
         DesiredCapabilities capability = DesiredCapabilities.firefox();
         FirefoxProfile profile = new FirefoxProfile();
@@ -55,7 +55,7 @@ public class RemoteWebRtcFirefoxTest {
                 capability);
     }
 
-    @After
+    @AfterAll
     public void teardown() {
         if (driver != null) {
             driver.quit();

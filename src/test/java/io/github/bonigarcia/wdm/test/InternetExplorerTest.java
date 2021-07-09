@@ -17,13 +17,13 @@
 
 package io.github.bonigarcia.wdm.test;
 
-import static org.junit.Assert.assertNotNull;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
@@ -35,22 +35,22 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-@Ignore
+@Disabled
 public class InternetExplorerTest {
 
     private WebDriver driver;
 
-    @BeforeClass
+    @BeforeAll
     public static void setupClass() {
         WebDriverManager.iedriver().setup();
     }
 
-    @Before
+    @BeforeEach
     public void setupTest() {
         driver = new InternetExplorerDriver();
     }
 
-    @After
+    @AfterAll
     public void teardown() {
         if (driver != null) {
             driver.quit();
@@ -59,7 +59,7 @@ public class InternetExplorerTest {
 
     @Test
     public void test() {
-        assertNotNull(driver);
+        assertThat(driver).isNotNull();
         driver.get("https://bonigarcia.github.io/selenium-jupiter/");
     }
 

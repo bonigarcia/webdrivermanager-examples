@@ -16,17 +16,15 @@
  */
 package io.github.bonigarcia.wdm.test;
 
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -38,12 +36,12 @@ import io.appium.java_client.android.AndroidDriver;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-@Ignore
+@Disabled
 public class AppiumTest {
 
     private WebDriver driver;
 
-    @Before
+    @BeforeEach
     public void setupTest() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "chrome");
@@ -52,7 +50,7 @@ public class AppiumTest {
                 capabilities);
     }
 
-    @After
+    @AfterAll
     public void teardown() {
         if (driver != null) {
             driver.quit();
@@ -62,13 +60,13 @@ public class AppiumTest {
     @Test
     public void test() throws InterruptedException {
         driver.get("https://bonigarcia.github.io/selenium-jupiter/");
-        assertThat(driver.getTitle(),
-                containsString("JUnit 5 extension for Selenium"));
+        assertThat(driver.getTitle())
+                .contains("JUnit 5 extension for Selenium");
 
         Thread.sleep(5000);
 
         driver.get("https://bonigarcia.github.io/");
-        assertThat(driver.getTitle(), equalTo("Boni García"));
+        assertThat(driver.getTitle()).contains("Boni García");
     }
 
 }

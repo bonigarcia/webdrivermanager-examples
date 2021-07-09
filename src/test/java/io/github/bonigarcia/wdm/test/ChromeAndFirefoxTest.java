@@ -17,12 +17,12 @@
 package io.github.bonigarcia.wdm.test;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -38,21 +38,22 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class ChromeAndFirefoxTest {
 
     protected WebDriver chrome;
+
     protected WebDriver firefox;
 
-    @BeforeClass
+    @BeforeAll
     public static void setupClass() {
         WebDriverManager.chromedriver().setup();
         WebDriverManager.firefoxdriver().setup();
     }
 
-    @Before
+    @BeforeEach
     public void setupTest() {
         chrome = new ChromeDriver();
         firefox = new FirefoxDriver();
     }
 
-    @After
+    @AfterAll
     public void teardown() {
         if (chrome != null) {
             chrome.quit();
@@ -77,7 +78,7 @@ public class ChromeAndFirefoxTest {
         firefox.get(sutUrl);
 
         // Assertion
-        assertEquals(chrome.getTitle(), firefox.getTitle());
+        assertThat(chrome.getTitle()).isEqualTo(firefox.getTitle());
     }
 
 }

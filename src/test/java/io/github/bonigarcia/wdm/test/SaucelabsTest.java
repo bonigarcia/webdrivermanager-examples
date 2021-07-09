@@ -17,16 +17,20 @@
 
 package io.github.bonigarcia.wdm.test;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.slf4j.Logger;
 
 /**
  * Test with Saucelabs.
@@ -34,8 +38,10 @@ import org.openqa.selenium.remote.RemoteWebDriver;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-@Ignore
+@Disabled
 public class SaucelabsTest {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     private WebDriver driver;
 
@@ -44,7 +50,7 @@ public class SaucelabsTest {
     public static final String URL = "https://" + USERNAME + ":" + ACCESS_KEY
             + "@ondemand.saucelabs.com:443/wd/hub";
 
-    @Before
+    @BeforeEach
     public void setupTest() throws MalformedURLException {
         DesiredCapabilities caps = DesiredCapabilities.chrome();
         caps.setCapability("platform", "Windows 10");
@@ -53,7 +59,7 @@ public class SaucelabsTest {
         driver = new RemoteWebDriver(new URL(URL), caps);
     }
 
-    @After
+    @AfterAll
     public void teardown() {
         if (driver != null) {
             driver.quit();
@@ -64,7 +70,7 @@ public class SaucelabsTest {
     public void test() throws InterruptedException {
         driver.get("https://en.wikipedia.org/wiki/Main_Page");
         String title = driver.getTitle();
-        System.out.println(title);
+        log.debug("The title is {}", title);
     }
 
 }

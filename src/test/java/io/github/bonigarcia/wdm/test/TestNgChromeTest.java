@@ -17,8 +17,7 @@
 package io.github.bonigarcia.wdm.test;
 
 import static java.lang.invoke.MethodHandles.lookup;
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.slf4j.LoggerFactory.getLogger;
 
 import org.slf4j.Logger;
@@ -39,7 +38,7 @@ public class TestNgChromeTest {
 
     @BeforeTest(alwaysRun = true)
     public void beforeTest() {
-        log.debug("TestNgChromeTest @BeforeTest");
+        log.debug("TestNgChromeTest @BeforeEachTest");
         WebDriverManager.chromedriver().config().setAvoidAutoReset(true);
         WebDriverManager.chromedriver().clearResolutionCache().forceDownload()
                 .setup();
@@ -48,8 +47,8 @@ public class TestNgChromeTest {
     @Test
     public void testChrome() {
         log.debug("TestNgChromeTest @Test");
-        assertThat(System.getProperty("webdriver.chrome.driver"),
-                containsString("chromedriver"));
+        assertThat(System.getProperty("webdriver.chrome.driver"))
+                .contains("chromedriver");
     }
 
 }

@@ -17,26 +17,27 @@
 
 package io.github.bonigarcia.wdm.test;
 
+import static java.lang.invoke.MethodHandles.lookup;
 import static java.util.concurrent.Executors.newFixedThreadPool;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 import static org.openqa.selenium.support.ui.ExpectedConditions.textToBePresentInElementLocated;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ErrorCollector;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -48,25 +49,24 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 public class PerformanceChromeTest {
 
+    static final Logger log = getLogger(lookup().lookupClass());
+
     private static final int NUMBER_OF_BROWSERS = 5;
     private List<WebDriver> driverList = new ArrayList<>(NUMBER_OF_BROWSERS);
 
-    @Rule
-    public ErrorCollector errorCollector = new ErrorCollector();
-
-    @BeforeClass
+    @BeforeAll
     public static void setupClass() {
         WebDriverManager.chromedriver().setup();
     }
 
-    @Before
+    @BeforeEach
     public void setupTest() {
         for (int i = 0; i < NUMBER_OF_BROWSERS; i++) {
             driverList.add(new ChromeDriver());
         }
     }
 
-    @After
+    @AfterAll
     public void teardown() {
         for (int i = 0; i < NUMBER_OF_BROWSERS; i++) {
             driverList.get(i).quit();
@@ -84,8 +84,8 @@ public class PerformanceChromeTest {
                 public void run() {
                     try {
                         singleTestExcution(driver);
-                    } catch (Throwable e) {
-                        errorCollector.addError(e);
+                    } catch (Exception e) {
+                        log.error("Some error happens", e);
                     } finally {
                         latch.countDown();
                     }

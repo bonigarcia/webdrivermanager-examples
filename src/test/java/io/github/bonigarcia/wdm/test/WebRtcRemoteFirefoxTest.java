@@ -17,21 +17,24 @@
 
 package io.github.bonigarcia.wdm.test;
 
+import static java.lang.invoke.MethodHandles.lookup;
 import static org.openqa.selenium.OutputType.BASE64;
 import static org.openqa.selenium.firefox.FirefoxOptions.FIREFOX_OPTIONS;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.slf4j.Logger;
 
 /**
  * WebRTC test with remote Firefox.
@@ -39,12 +42,14 @@ import org.openqa.selenium.remote.RemoteWebDriver;
  * @author Boni Garcia (boni.gg@gmail.com)
  * @since 1.0.0
  */
-@Ignore
+@Disabled
 public class WebRtcRemoteFirefoxTest {
+
+    static final Logger log = getLogger(lookup().lookupClass());
 
     private WebDriver driver;
 
-    @Before
+    @BeforeEach
     public void setup() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         FirefoxOptions options = new FirefoxOptions();
@@ -56,7 +61,7 @@ public class WebRtcRemoteFirefoxTest {
                 capabilities);
     }
 
-    @After
+    @AfterAll
     public void teardown() {
         if (driver != null) {
             driver.quit();
@@ -69,7 +74,7 @@ public class WebRtcRemoteFirefoxTest {
                 "https://webrtc.github.io/samples/src/content/devices/input-output/");
         String screenshotBase64 = ((TakesScreenshot) driver)
                 .getScreenshotAs(BASE64);
-        System.err.println("data:image/png;base64," + screenshotBase64);
+        log.debug("data:image/png;base64,{}", screenshotBase64);
     }
 
 }

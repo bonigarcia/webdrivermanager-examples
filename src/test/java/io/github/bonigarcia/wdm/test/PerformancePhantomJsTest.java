@@ -17,9 +17,11 @@
 
 package io.github.bonigarcia.wdm.test;
 
+import static java.lang.invoke.MethodHandles.lookup;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 import static org.openqa.selenium.support.ui.ExpectedConditions.textToBePresentInElementLocated;
+import static org.slf4j.LoggerFactory.getLogger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,16 +29,15 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ErrorCollector;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -48,25 +49,24 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 public class PerformancePhantomJsTest {
 
+    static final Logger log = getLogger(lookup().lookupClass());
+
     private static final int NUMBER_OF_BROWSERS = 5;
     private List<WebDriver> driverList = new ArrayList<>(NUMBER_OF_BROWSERS);
 
-    @Rule
-    public ErrorCollector errorCollector = new ErrorCollector();
-
-    @BeforeClass
+    @BeforeAll
     public static void setupClass() {
         WebDriverManager.phantomjs().setup();
     }
 
-    @Before
+    @BeforeEach
     public void setupTest() {
         for (int i = 0; i < NUMBER_OF_BROWSERS; i++) {
             driverList.add(new PhantomJSDriver());
         }
     }
 
-    @After
+    @AfterAll
     public void teardown() {
         for (int i = 0; i < NUMBER_OF_BROWSERS; i++) {
             driverList.get(i).close();
@@ -85,8 +85,8 @@ public class PerformancePhantomJsTest {
                 public void run() {
                     try {
                         singleTestExcution(driver);
-                    } catch (Throwable e) {
-                        errorCollector.addError(e);
+                    } catch (Exception e) {
+                        log.error("Some error happens", e);
                     } finally {
                         latch.countDown();
                     }
