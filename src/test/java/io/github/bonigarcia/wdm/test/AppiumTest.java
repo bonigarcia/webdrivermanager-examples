@@ -33,7 +33,7 @@ import io.appium.java_client.android.AndroidDriver;
 /**
  * Test with Appium and Android.
  *
- * @author Boni Garcia (boni.gg@gmail.com)
+ * @author Boni Garcia
  * @since 1.0.0
  */
 @Disabled

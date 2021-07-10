@@ -35,7 +35,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 /**
  * Example which opens a new Tab with JavaScript using Chrome as browser.
  *
- * @author Boni Garcia (boni.gg@gmail.com)
+ * @author Boni Garcia
  * @since 1.0.0
  */
 class OpenNewTabUsingJsChromeTest {

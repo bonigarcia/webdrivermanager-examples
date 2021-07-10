@@ -33,7 +33,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 /**
  * WebRTC test with Chrome.
  *
- * @author Boni Garcia (boni.gg@gmail.com)
+ * @author Boni Garcia
  * @since 1.0.0
  */
 class WebRtcChromeTest {

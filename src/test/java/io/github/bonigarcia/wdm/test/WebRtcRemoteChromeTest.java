@@ -40,7 +40,7 @@ import org.slf4j.Logger;
 /**
  * WebRTC test with remote Chrome.
  *
- * @author Boni Garcia (boni.gg@gmail.com)
+ * @author Boni Garcia
  * @since 1.0.0
  */
 @Disabled

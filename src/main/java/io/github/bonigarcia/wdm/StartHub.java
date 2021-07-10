@@ -21,7 +21,7 @@ import org.openqa.grid.selenium.GridLauncherV3;
 /**
  * Start a hub in Selnium Grid.
  *
- * @author Boni Garcia (boni.gg@gmail.com)
+ * @author Boni Garcia
  * @since 1.0.0
  */
 public class StartHub {

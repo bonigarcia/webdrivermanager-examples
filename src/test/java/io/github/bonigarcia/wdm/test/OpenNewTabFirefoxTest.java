@@ -43,7 +43,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 /**
  * Example which opens a new Tab with Java Robot using Firefox as browser.
  *
- * @author Boni Garcia (boni.gg@gmail.com)
+ * @author Boni Garcia
  * @since 1.0.0
  */
 class OpenNewTabFirefoxTest {

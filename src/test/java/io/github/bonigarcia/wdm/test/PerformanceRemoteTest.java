@@ -41,7 +41,7 @@ import org.slf4j.Logger;
 /**
  * Performance test using several concurrent remote Chrome browsers.
  *
- * @author Boni Garcia (boni.gg@gmail.com)
+ * @author Boni Garcia
  * @since 1.0.0
  */
 @Disabled

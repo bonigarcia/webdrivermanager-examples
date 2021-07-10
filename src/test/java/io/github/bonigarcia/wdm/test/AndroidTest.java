@@ -32,7 +32,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 /**
  * Test with Android device.
  *
- * @author Boni Garcia (boni.gg@gmail.com)
+ * @author Boni Garcia
  * @since 1.0.0
  */
 @Disabled

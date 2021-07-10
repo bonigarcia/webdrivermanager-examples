@@ -37,7 +37,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 /**
  * Test with Chrome.
  *
- * @author Boni Garcia (boni.gg@gmail.com)
+ * @author Boni Garcia
  * @since 1.0.0
  */
 class FullScreenshotTest {

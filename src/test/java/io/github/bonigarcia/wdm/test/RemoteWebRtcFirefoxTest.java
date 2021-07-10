@@ -36,7 +36,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 /**
  * Test for WebRTC with Firefox in Selenium Grid.
  *
- * @author Boni Garcia (boni.gg@gmail.com)
+ * @author Boni Garcia
  * @since 1.0.0
  */
 @Disabled

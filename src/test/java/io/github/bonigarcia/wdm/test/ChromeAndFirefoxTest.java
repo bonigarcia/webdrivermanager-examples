@@ -32,7 +32,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 /**
  * Test with Chrome and Firefox browsers.
  *
- * @author Boni Garcia (boni.gg@gmail.com)
+ * @author Boni Garcia
  * @since 1.0.0
  */
 class ChromeAndFirefoxTest {
