@@ -39,7 +39,6 @@ class TestNgChromeTest {
     @BeforeTest(alwaysRun = true)
     void beforeTest() {
         log.debug("TestNgChromeTest @BeforeEachTest");
-        WebDriverManager.chromedriver().config().setAvoidAutoReset(true);
         WebDriverManager.chromedriver().clearResolutionCache().forceDownload()
                 .setup();
     }

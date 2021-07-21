@@ -40,7 +40,6 @@ class TestNgFirefoxTest {
     @BeforeTest(alwaysRun = true)
     void beforeTest() {
         log.debug("TestNgFirefoxTest @BeforeEachTest");
-        WebDriverManager.firefoxdriver().config().setAvoidAutoReset(true);
         WebDriverManager.firefoxdriver().clearResolutionCache().forceDownload()
                 .setup();
     }
