@@ -17,7 +17,6 @@
 
 package io.github.bonigarcia.wdm.test.webrtc;
 
-import static java.lang.Thread.sleep;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 import org.junit.jupiter.api.AfterEach;
@@ -74,13 +73,12 @@ class WebRtcChromeTest {
 
         // Implicit timeout
         driver.manage().timeouts().implicitlyWait(timeout, SECONDS);
-        driver.manage().timeouts().implicitlyWait(timeout, SECONDS);
 
         // Open page
         driver.get(sutUrl);
 
         // Wait 5 seconds
-        sleep(5000);
+        Thread.sleep(5000);
     }
 
 }
