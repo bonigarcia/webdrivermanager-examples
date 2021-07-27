@@ -64,7 +64,7 @@ class ChromeHeadlessTest {
 
     @Test
     void test() {
-        String sutUrl = "https://bonigarcia.github.io/selenium-jupiter/";
+        String sutUrl = "https://bonigarcia.org/selenium-jupiter/";
         driver.get(sutUrl);
         String title = driver.getTitle();
         log.debug("The title of {} is {}", sutUrl, title);

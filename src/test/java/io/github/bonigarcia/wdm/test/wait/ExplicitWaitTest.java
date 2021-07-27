@@ -63,7 +63,7 @@ class ExplicitWaitTest {
 
     @Test
     void test() {
-        driver.get("https://bonigarcia.github.io/selenium-jupiter/");
+        driver.get("https://bonigarcia.org/selenium-jupiter/");
         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
                 .withTimeout(of(10, SECONDS)).pollingEvery(of(1, SECONDS))
                 .ignoring(NoSuchElementException.class);

@@ -62,7 +62,7 @@ class OpenNewTabUsingJsChromeTest {
     @Test
     void test() throws Exception {
         // Open URL in default tab
-        driver.get("https://bonigarcia.github.io/selenium-jupiter/");
+        driver.get("https://bonigarcia.org/selenium-jupiter/");
 
         // Open new tab using JavaScript
         ((JavascriptExecutor) driver).executeScript("window.open()");

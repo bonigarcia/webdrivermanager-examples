@@ -60,7 +60,7 @@ class InternetExplorerTest {
     @Test
     void test() {
         assertThat(driver).isNotNull();
-        driver.get("https://bonigarcia.github.io/selenium-jupiter/");
+        driver.get("https://bonigarcia.org/selenium-jupiter/");
     }
 
 }
