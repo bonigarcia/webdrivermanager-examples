@@ -81,14 +81,9 @@ class PerformanceRemoteTest {
 
         for (int i = 0; i < NUMBER_OF_BROWSERS; i++) {
             final WebDriver driver = driverList.get(i);
-            final int j = i;
             executor.execute(() -> {
                 try {
-                    if (driver != null) {
-                        driver.quit();
-                    } else {
-                        log.error("**** Error with driver {}", j);
-                    }
+                    driver.quit();
                 } finally {
                     latch.countDown();
                 }

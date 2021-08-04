@@ -54,9 +54,7 @@ class OpenNewTabUsingJsFirefoxTest {
 
     @AfterEach
     void teardown() {
-        if (driver != null) {
-            driver.quit();
-        }
+        driver.quit();
     }
 
     @Test
