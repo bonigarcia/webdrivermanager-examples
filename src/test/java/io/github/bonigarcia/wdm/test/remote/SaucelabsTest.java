@@ -18,6 +18,7 @@
 package io.github.bonigarcia.wdm.test.remote;
 
 import static java.lang.invoke.MethodHandles.lookup;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.slf4j.LoggerFactory.getLogger;
 
 import java.net.MalformedURLException;
@@ -65,10 +66,9 @@ class SaucelabsTest {
     }
 
     @Test
-    void test() throws InterruptedException {
-        driver.get("https://en.wikipedia.org/wiki/Main_Page");
-        String title = driver.getTitle();
-        log.debug("The title is {}", title);
+    void test() {
+        driver.get("https://bonigarcia.org/webdrivermanager/");
+        assertThat(driver.getTitle()).contains("WebDriverManager");
     }
 
 }

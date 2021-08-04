@@ -53,8 +53,7 @@ class DockerEdgeTest {
         String title = driver.getTitle();
         log.debug("The title of {} is {}", sutUrl, title);
 
-        assertThat(title)
-                .contains("Automated driver management for Selenium WebDriver");
+        assertThat(title).contains("WebDriverManager");
     }
 
 }

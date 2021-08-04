@@ -61,11 +61,11 @@ class ExplicitWaitTest {
 
     @Test
     void test() {
-        driver.get("https://bonigarcia.org/selenium-jupiter/");
+        driver.get("https://bonigarcia.org/webdrivermanager/");
         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
                 .withTimeout(of(10, SECONDS)).pollingEvery(of(1, SECONDS))
                 .ignoring(NoSuchElementException.class);
-        wait.until(titleContains("JUnit 5 extension for Selenium"));
+        wait.until(titleContains("WebDriverManager"));
     }
 
 }

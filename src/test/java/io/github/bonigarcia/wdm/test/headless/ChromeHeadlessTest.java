@@ -62,12 +62,11 @@ class ChromeHeadlessTest {
 
     @Test
     void test() {
-        String sutUrl = "https://bonigarcia.org/selenium-jupiter/";
+        String sutUrl = "https://bonigarcia.org/webdrivermanager/";
         driver.get(sutUrl);
         String title = driver.getTitle();
         log.debug("The title of {} is {}", sutUrl, title);
-        assertThat(driver.getTitle())
-                .contains("JUnit 5 extension for Selenium");
+        assertThat(driver.getTitle()).contains("WebDriverManager");
     }
 
 }

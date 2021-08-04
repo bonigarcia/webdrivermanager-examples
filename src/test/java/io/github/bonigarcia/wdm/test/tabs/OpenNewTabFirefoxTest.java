@@ -70,7 +70,7 @@ class OpenNewTabFirefoxTest {
     @Test
     void test() throws Exception {
         // Open URL in default tab
-        driver.get("https://wikipedia.org/");
+        driver.get("https://bonigarcia.org/webdrivermanager/");
 
         // If Mac OS X, the key combination is CMD+t, otherwise is CONTROL+t
         int vkControl = IS_OS_MAC ? VK_META : VK_CONTROL;
@@ -90,7 +90,7 @@ class OpenNewTabFirefoxTest {
         driver.switchTo().window(windowHandles.get(1));
 
         // Open other URL in second tab
-        driver.get("https://google.com/");
+        driver.get("https://bonigarcia.org/selenium-jupiter/");
     }
 
 }

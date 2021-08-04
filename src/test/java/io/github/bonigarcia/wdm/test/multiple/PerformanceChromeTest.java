@@ -19,9 +19,7 @@ package io.github.bonigarcia.wdm.test.multiple;
 
 import static java.lang.invoke.MethodHandles.lookup;
 import static java.util.concurrent.Executors.newFixedThreadPool;
-import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
-import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
-import static org.openqa.selenium.support.ui.ExpectedConditions.textToBePresentInElementLocated;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.slf4j.LoggerFactory.getLogger;
 
 import java.util.ArrayList;
@@ -33,10 +31,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -98,18 +94,8 @@ class PerformanceChromeTest {
     }
 
     void singleTestExcution(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        driver.get("https://en.wikipedia.org/wiki/Main_Page");
-
-        By searchInput = By.id("searchInput");
-        wait.until(presenceOfElementLocated(searchInput));
-        driver.findElement(searchInput).sendKeys("Software");
-        By searchButton = By.id("searchButton");
-        wait.until(elementToBeClickable(searchButton));
-        driver.findElement(searchButton).click();
-
-        wait.until(textToBePresentInElementLocated(By.tagName("body"),
-                "Computer software"));
+        driver.get("https://bonigarcia.org/webdrivermanager/");
+        assertThat(driver.getTitle()).contains("WebDriverManager");
     }
 
 }

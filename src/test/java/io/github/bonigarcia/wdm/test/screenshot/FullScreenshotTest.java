@@ -61,7 +61,7 @@ class FullScreenshotTest {
 
     @Test
     void test() throws Exception {
-        driver.get("https://en.wikipedia.org/wiki/Main_Page");
+        driver.get("https://bonigarcia.org/webdrivermanager/");
 
         Robot robot = new Robot();
         Rectangle captureSize = new Rectangle(

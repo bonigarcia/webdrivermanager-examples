@@ -57,14 +57,13 @@ class AppiumTest {
 
     @Test
     void test() throws InterruptedException {
-        driver.get("https://bonigarcia.org/selenium-jupiter/");
-        assertThat(driver.getTitle())
-                .contains("JUnit 5 extension for Selenium");
+        driver.get("https://bonigarcia.org/webdrivermanager/");
+        assertThat(driver.getTitle()).contains("WebDriverManager");
 
         Thread.sleep(5000);
 
-        driver.get("https://bonigarcia.github.io/");
-        assertThat(driver.getTitle()).contains("Boni García");
+        driver.get("https://bonigarcia.org/selenium-jupiter");
+        assertThat(driver.getTitle()).contains("Selenium-Jupiter");
     }
 
 }

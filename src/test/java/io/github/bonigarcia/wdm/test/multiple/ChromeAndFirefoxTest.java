@@ -67,7 +67,7 @@ class ChromeAndFirefoxTest {
     void test() {
         // Test data
         int timeout = 30;
-        String sutUrl = "https://en.wikipedia.org/wiki/Main_Page";
+        String sutUrl = "https://bonigarcia.org/webdrivermanager/";
 
         // Implicit timeout
         chrome.manage().timeouts().implicitlyWait(timeout, SECONDS);

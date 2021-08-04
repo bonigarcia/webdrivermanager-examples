@@ -57,9 +57,8 @@ class FluentWaitTest {
     @Test
     void test() {
         driver.manage().timeouts().implicitlyWait(10, SECONDS);
-        driver.get("https://bonigarcia.org/selenium-jupiter/");
-        assertThat(driver.getTitle())
-                .contains("JUnit 5 extension for Selenium");
+        driver.get("https://bonigarcia.org/webdrivermanager/");
+        assertThat(driver.getTitle()).contains("WebDriverManager");
     }
 
 }

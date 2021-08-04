@@ -117,9 +117,11 @@ class PerformanceRemoteTest {
     }
 
     void singleTestExcution(WebDriver driver, int index) {
-        driver.get("https://en.wikipedia.org/wiki/Main_Page");
+        String sutUrl = "https://bonigarcia.org/webdrivermanager/";
+        driver.get(sutUrl);
         String title = driver.getTitle();
-        assertThat(title).isEqualTo("Wikipedia, the free encyclopedia");
+        log.debug("The title of {} is {}", sutUrl, title);
+        assertThat(title).contains("WebDriverManager");
 
         SessionId sessionId = ((RemoteWebDriver) driver).getSessionId();
         log.debug("{} -- {} -- {}", index, sessionId, title);
