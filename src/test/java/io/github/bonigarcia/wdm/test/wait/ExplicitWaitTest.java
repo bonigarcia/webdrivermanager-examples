@@ -17,11 +17,7 @@
 
 package io.github.bonigarcia.wdm.test.wait;
 
-import static java.time.Duration.of;
-import static java.time.temporal.ChronoUnit.SECONDS;
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleContains;
-
-import java.util.NoSuchElementException;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -29,8 +25,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -62,9 +57,7 @@ class ExplicitWaitTest {
     @Test
     void test() {
         driver.get("https://bonigarcia.org/webdrivermanager/");
-        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-                .withTimeout(of(10, SECONDS)).pollingEvery(of(1, SECONDS))
-                .ignoring(NoSuchElementException.class);
+        WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(titleContains("WebDriverManager"));
     }
 
