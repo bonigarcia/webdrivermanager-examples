@@ -59,14 +59,14 @@ class EdgeTest {
     @Test
     void test() {
         WebDriverWait wait = new WebDriverWait(driver, 30);
-        driver.get("https://bonigarcia.org/webdrivermanager/");
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
 
         By examplesHeading = By.id("examples");
         wait.until(elementToBeClickable(examplesHeading));
         driver.findElement(examplesHeading).click();
 
         wait.until(textToBePresentInElementLocated(By.tagName("body"),
-                "WebDriverManager"));
+                "Selenium WebDriver"));
     }
 
 }

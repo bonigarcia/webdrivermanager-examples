@@ -62,11 +62,11 @@ class ChromeHeadlessTest {
 
     @Test
     void test() {
-        String sutUrl = "https://bonigarcia.org/webdrivermanager/";
+        String sutUrl = "https://bonigarcia.dev/selenium-webdriver-java/";
         driver.get(sutUrl);
         String title = driver.getTitle();
         log.debug("The title of {} is {}", sutUrl, title);
-        assertThat(driver.getTitle()).contains("WebDriverManager");
+        assertThat(driver.getTitle()).contains("Selenium WebDriver");
     }
 
 }

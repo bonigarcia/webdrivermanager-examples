@@ -57,13 +57,14 @@ class AppiumTest {
 
     @Test
     void test() throws InterruptedException {
-        driver.get("https://bonigarcia.org/webdrivermanager/");
-        assertThat(driver.getTitle()).contains("WebDriverManager");
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
+        assertThat(driver.getTitle()).contains("Selenium WebDriver");
 
         Thread.sleep(5000);
 
-        driver.get("https://bonigarcia.org/selenium-jupiter");
-        assertThat(driver.getTitle()).contains("Selenium-Jupiter");
+        driver.get(
+                "https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html");
+        assertThat(driver.getTitle()).contains("Selenium WebDriver");
     }
 
 }

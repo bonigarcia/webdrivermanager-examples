@@ -63,8 +63,8 @@ class FluentWaitTest {
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofSeconds(1))
                 .ignoring(NoSuchElementException.class);
-        driver.get("https://bonigarcia.org/webdrivermanager/");
-        wait.until(ExpectedConditions.titleContains("WebDriverManager"));
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
+        wait.until(ExpectedConditions.titleContains("Selenium WebDriver"));
     }
 
 }

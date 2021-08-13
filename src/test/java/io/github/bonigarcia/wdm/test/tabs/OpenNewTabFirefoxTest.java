@@ -70,7 +70,7 @@ class OpenNewTabFirefoxTest {
     @Test
     void test() throws Exception {
         // Open URL in default tab
-        driver.get("https://bonigarcia.org/webdrivermanager/");
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
 
         // If Mac OS X, the key combination is CMD+t, otherwise is CONTROL+t
         int vkControl = IS_OS_MAC ? VK_META : VK_CONTROL;
@@ -90,7 +90,8 @@ class OpenNewTabFirefoxTest {
         driver.switchTo().window(windowHandles.get(1));
 
         // Open other URL in second tab
-        driver.get("https://bonigarcia.org/selenium-jupiter/");
+        driver.get(
+                "https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html");
     }
 
 }

@@ -56,9 +56,9 @@ class ExplicitWaitTest {
 
     @Test
     void test() {
-        driver.get("https://bonigarcia.org/webdrivermanager/");
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
         WebDriverWait wait = new WebDriverWait(driver, 5);
-        wait.until(titleContains("WebDriverManager"));
+        wait.until(titleContains("Selenium WebDriver"));
     }
 
 }

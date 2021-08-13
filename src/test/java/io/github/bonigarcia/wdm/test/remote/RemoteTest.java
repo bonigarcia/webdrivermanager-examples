@@ -62,11 +62,11 @@ class RemoteTest {
 
     @Test
     void test() {
-        String sutUrl = "https://bonigarcia.org/webdrivermanager/";
+        String sutUrl = "https://bonigarcia.dev/selenium-webdriver-java/";
         driver.get(sutUrl);
         String title = driver.getTitle();
         log.debug("The title of {} is {}", sutUrl, title);
-        assertThat(title).contains("WebDriverManager");
+        assertThat(title).contains("Selenium WebDriver");
     }
 
 }

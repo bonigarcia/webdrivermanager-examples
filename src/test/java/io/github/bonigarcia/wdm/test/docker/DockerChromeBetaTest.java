@@ -54,7 +54,7 @@ class DockerChromeBetaTest {
         String title = driver.getTitle();
         log.debug("The title of {} is {}", sutUrl, title);
 
-        assertThat(title).contains("WebDriverManager");
+        assertThat(title).contains("Selenium WebDriver");
 
         Thread.sleep(5000);
     }

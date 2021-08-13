@@ -60,7 +60,7 @@ class OpenNewTabUsingJsFirefoxTest {
     @Test
     void test() throws Exception {
         // Open URL in default tab
-        driver.get("https://bonigarcia.org/webdrivermanager/");
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
 
         // Open new tab using JavaScript
         ((JavascriptExecutor) driver).executeScript("window.open()");
@@ -74,7 +74,8 @@ class OpenNewTabUsingJsFirefoxTest {
         driver.switchTo().window(windowHandles.get(1));
 
         // Open other URL in second tab
-        driver.get("https://bonigarcia.org/selenium-jupiter/");
+        driver.get(
+                "https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html");
     }
 
 }

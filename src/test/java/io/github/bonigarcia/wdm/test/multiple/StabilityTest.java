@@ -56,7 +56,7 @@ class StabilityTest {
                     options.addArguments("--headless");
                     WebDriver driver = new ChromeDriver(options);
                     driver.get(
-                            "https://bonigarcia.org/selenium-jupiter/");
+                            "https://bonigarcia.dev/selenium-webdriver-java/");
                     String title = driver.getTitle();
                     log.debug("The title is {}", title);
                     driver.quit();

@@ -60,7 +60,7 @@ class ScreenshotTest {
 
     @Test
     void test() throws IOException {
-        driver.get("https://bonigarcia.org/webdrivermanager/");
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
 
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(FILE);
         copyFile(scrFile, new File(("screenshot.jpg")));

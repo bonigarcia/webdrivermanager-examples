@@ -48,8 +48,8 @@ class MultipleBrowsersTest {
     void test(Class<? extends WebDriver> driverClass) {
         driver = WebDriverManager.getInstance(driverClass).create();
 
-        driver.get("https://bonigarcia.org/webdrivermanager/");
-        assertThat(driver.getTitle()).contains("WebDriverManager");
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
+        assertThat(driver.getTitle()).contains("Selenium WebDriver");
     }
 
 }

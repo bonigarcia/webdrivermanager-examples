@@ -58,7 +58,7 @@ class InternetExplorerTest {
     @Test
     void test() {
         assertThat(driver).isNotNull();
-        driver.get("https://bonigarcia.org/webdrivermanager/");
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
     }
 
 }
