@@ -25,7 +25,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -37,6 +36,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  * @since 1.0.0
  */
 class CanvasTest {
+
+    final int NUM_POINTS = 20;
+    final double RADIUS = 30;
 
     WebDriver driver;
 
@@ -60,12 +62,18 @@ class CanvasTest {
         driver.get("http://szimek.github.io/signature_pad/");
 
         WebElement canvas = driver.findElement(By.tagName("canvas"));
-        Action action = new Actions(driver).click(canvas)
-                .moveToElement(canvas, 8, 8).clickAndHold(canvas)
-                .moveByOffset(120, 120).moveByOffset(-120, 120)
-                .moveByOffset(-120, -120).moveByOffset(8, 8).release(canvas)
-                .build();
-        action.perform();
+        Actions actions = new Actions(driver).moveToElement(canvas)
+                .clickAndHold();
+
+        for (int i = 0; i <= NUM_POINTS; i++) {
+            double angle = Math.toRadians(((double) i / NUM_POINTS) * 360);
+            double x = Math.sin(angle) * RADIUS;
+            double y = Math.cos(angle) * RADIUS;
+            actions.moveByOffset((int) x, (int) y);
+        }
+
+        actions.release(canvas);
+        actions.build().perform();
 
         Thread.sleep(5000);
     }
