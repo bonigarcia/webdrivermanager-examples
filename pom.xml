@@ -15,7 +15,7 @@
         <assertj.version>3.20.2</assertj.version>
         <selenium.version>3.141.59</selenium.version>
         <phantomjsdriver.version>1.4.4</phantomjsdriver.version>
-        <wdm.version>5.0.0-SNAPSHOT</wdm.version>
+        <wdm.version>5.0.0</wdm.version>
         <testng.version>7.4.0</testng.version>
         <appium-java-client.version>7.5.1</appium-java-client.version>
 
@@ -119,18 +119,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <repository>
-            <id>oss.sonatype.org-snapshot</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
 
 </project>
