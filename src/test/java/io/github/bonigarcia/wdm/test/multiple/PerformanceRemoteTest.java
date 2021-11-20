@@ -20,7 +20,6 @@ package io.github.bonigarcia.wdm.test.multiple;
 import static java.lang.invoke.MethodHandles.lookup;
 import static java.util.concurrent.Executors.newFixedThreadPool;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.openqa.selenium.remote.DesiredCapabilities.chrome;
 import static org.slf4j.LoggerFactory.getLogger;
 
 import java.net.URL;
@@ -34,6 +33,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;
 import org.slf4j.Logger;
@@ -61,7 +61,8 @@ class PerformanceRemoteTest {
         for (int i = 0; i < NUMBER_OF_BROWSERS; i++) {
             executor.execute(() -> {
                 try {
-                    driverList.add(new RemoteWebDriver(serverUrl, chrome()));
+                    driverList.add(new RemoteWebDriver(serverUrl,
+                            new ChromeOptions()));
                 } catch (Exception e) {
                     log.error("Some error happens", e);
                 } finally {

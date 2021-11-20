@@ -19,8 +19,6 @@ package io.github.bonigarcia.wdm.test.webrtc;
 
 import static java.lang.invoke.MethodHandles.lookup;
 import static org.openqa.selenium.OutputType.BASE64;
-import static org.openqa.selenium.chrome.ChromeOptions.CAPABILITY;
-import static org.openqa.selenium.remote.DesiredCapabilities.chrome;
 import static org.slf4j.LoggerFactory.getLogger;
 
 import java.net.MalformedURLException;
@@ -33,7 +31,6 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
 
@@ -52,14 +49,12 @@ class WebRtcRemoteChromeTest {
 
     @BeforeEach
     void setup() throws MalformedURLException {
-        DesiredCapabilities capabilities = chrome();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--use-fake-ui-for-media-stream");
         options.addArguments("--use-fake-device-for-media-stream");
-        capabilities.setCapability(CAPABILITY, options);
 
         driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
-                capabilities);
+                options);
     }
 
     @AfterEach

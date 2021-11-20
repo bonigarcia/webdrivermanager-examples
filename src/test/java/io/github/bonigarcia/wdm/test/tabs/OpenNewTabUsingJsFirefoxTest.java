@@ -18,6 +18,7 @@ package io.github.bonigarcia.wdm.test.tabs;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsToBe;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,7 +67,7 @@ class OpenNewTabUsingJsFirefoxTest {
         ((JavascriptExecutor) driver).executeScript("window.open()");
 
         // Wait up to 3 seconds to the second tab to be opened
-        WebDriverWait wait = new WebDriverWait(driver, 3);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         wait.until(numberOfWindowsToBe(2));
 
         // Switch to new tab

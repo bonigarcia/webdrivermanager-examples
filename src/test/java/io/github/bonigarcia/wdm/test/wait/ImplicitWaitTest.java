@@ -17,8 +17,9 @@
 
 package io.github.bonigarcia.wdm.test.wait;
 
-import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.assertj.core.api.Assertions.assertThat;
+
+import java.time.Duration;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -56,7 +57,7 @@ class ImplicitWaitTest {
 
     @Test
     void test() {
-        driver.manage().timeouts().implicitlyWait(10, SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
         assertThat(driver.getTitle()).contains("Selenium WebDriver");
     }

@@ -13,7 +13,7 @@
 
         <junit.version>5.7.2</junit.version>
         <assertj.version>3.20.2</assertj.version>
-        <selenium.version>3.141.59</selenium.version>
+        <selenium.version>4.0.0</selenium.version>
         <phantomjsdriver.version>1.4.4</phantomjsdriver.version>
         <wdm.version>5.0.1</wdm.version>
         <testng.version>7.4.0</testng.version>
@@ -54,7 +54,7 @@
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-server</artifactId>
+            <artifactId>selenium-grid</artifactId>
             <version>${selenium.version}</version>
         </dependency>
         <dependency>

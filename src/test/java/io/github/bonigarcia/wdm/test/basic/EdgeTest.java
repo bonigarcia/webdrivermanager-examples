@@ -20,6 +20,8 @@ package io.github.bonigarcia.wdm.test.basic;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 import static org.openqa.selenium.support.ui.ExpectedConditions.textToBePresentInElementLocated;
 
+import java.time.Duration;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -58,7 +60,7 @@ class EdgeTest {
 
     @Test
     void test() {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
 
         By examplesHeading = By.id("examples");

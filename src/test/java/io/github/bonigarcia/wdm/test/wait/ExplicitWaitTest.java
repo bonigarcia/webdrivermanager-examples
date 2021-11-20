@@ -19,6 +19,8 @@ package io.github.bonigarcia.wdm.test.wait;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleContains;
 
+import java.time.Duration;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -57,7 +59,7 @@ class ExplicitWaitTest {
     @Test
     void test() {
         driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
-        WebDriverWait wait = new WebDriverWait(driver, 5);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(titleContains("Selenium WebDriver"));
     }
 

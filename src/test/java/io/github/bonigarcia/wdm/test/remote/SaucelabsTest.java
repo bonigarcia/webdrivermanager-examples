@@ -29,7 +29,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
 
@@ -53,11 +53,11 @@ class SaucelabsTest {
 
     @BeforeEach
     void setupTest() throws MalformedURLException {
-        DesiredCapabilities caps = DesiredCapabilities.chrome();
-        caps.setCapability("platform", "Windows 10");
-        caps.setCapability("version", "52.0");
+        ChromeOptions options = new ChromeOptions();
+        options.setCapability("platform", "Windows 10");
+        options.setCapability("version", "52.0");
 
-        driver = new RemoteWebDriver(new URL(URL), caps);
+        driver = new RemoteWebDriver(new URL(URL), options);
     }
 
     @AfterEach

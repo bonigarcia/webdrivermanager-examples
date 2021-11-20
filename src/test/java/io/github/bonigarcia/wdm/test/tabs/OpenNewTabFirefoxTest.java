@@ -26,6 +26,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsT
 import static org.slf4j.LoggerFactory.getLogger;
 
 import java.awt.Robot;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,7 +82,7 @@ class OpenNewTabFirefoxTest {
         robot.keyRelease(VK_T);
 
         // Wait up to 5 seconds to the second tab to be opened
-        WebDriverWait wait = new WebDriverWait(driver, 5);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(numberOfWindowsToBe(2));
 
         // Switch to new tab

@@ -17,7 +17,7 @@
 
 package io.github.bonigarcia.wdm.test.webrtc;
 
-import static java.util.concurrent.TimeUnit.SECONDS;
+import java.time.Duration;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -70,7 +70,7 @@ class WebRtcFirefoxTest {
         String sutUrl = "https://webrtc.github.io/samples/src/content/devices/input-output/";
 
         // Implicit timeout
-        driver.manage().timeouts().implicitlyWait(timeout, SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeout));
 
         // Open page
         driver.get(sutUrl);

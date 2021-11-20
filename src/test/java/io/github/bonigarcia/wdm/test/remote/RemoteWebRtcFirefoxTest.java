@@ -18,19 +18,17 @@
 package io.github.bonigarcia.wdm.test.remote;
 
 import static java.lang.Thread.sleep;
-import static java.util.concurrent.TimeUnit.SECONDS;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
@@ -46,13 +44,11 @@ class RemoteWebRtcFirefoxTest {
 
     @BeforeEach
     void setupTest() throws MalformedURLException {
-        DesiredCapabilities capability = DesiredCapabilities.firefox();
-        FirefoxProfile profile = new FirefoxProfile();
-        profile.setPreference("media.navigator.permission.disabled", true);
-        profile.setPreference("media.navigator.streams.fake", true);
-        capability.setCapability(FirefoxDriver.PROFILE, profile);
+        FirefoxOptions options = new FirefoxOptions();
+        options.addPreference("media.navigator.permission.disabled", true);
+        options.addPreference("media.navigator.streams.fake", true);
         driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
-                capability);
+                options);
     }
 
     @AfterEach
@@ -67,8 +63,8 @@ class RemoteWebRtcFirefoxTest {
         String sutUrl = "https://webrtc.github.io/samples/src/content/devices/input-output/";
 
         // Implicit timeout
-        driver.manage().timeouts().implicitlyWait(timeout, SECONDS);
-        driver.manage().timeouts().implicitlyWait(timeout, SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeout));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeout));
 
         // Open page
         driver.get(sutUrl);

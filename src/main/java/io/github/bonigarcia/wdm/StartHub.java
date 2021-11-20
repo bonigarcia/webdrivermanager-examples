@@ -16,10 +16,12 @@
  */
 package io.github.bonigarcia.wdm;
 
-import org.openqa.grid.selenium.GridLauncherV3;
+import org.openqa.selenium.grid.Main;
+import org.openqa.selenium.net.PortProber;
 
 /**
- * Start a hub in Selnium Grid.
+ * Start Selenium Grid in standalone mode registering two nodes (Chrome and
+ * Firefox).
  *
  * @author Boni Garcia
  * @since 1.0.0
@@ -27,7 +29,12 @@ import org.openqa.grid.selenium.GridLauncherV3;
 public class StartHub {
 
     public static void main(String[] args) throws Exception {
-        GridLauncherV3.main(new String[] { "-role", "hub", "-port", "4444" });
+        int port = PortProber.findFreePort();
+        WebDriverManager.chromedriver().setup();
+        WebDriverManager.firefoxdriver().setup();
+
+        Main.main(
+                new String[] { "standalone", "--port", String.valueOf(port) });
     }
 
 }

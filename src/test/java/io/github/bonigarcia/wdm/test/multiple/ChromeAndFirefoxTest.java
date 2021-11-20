@@ -16,8 +16,9 @@
  */
 package io.github.bonigarcia.wdm.test.multiple;
 
-import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.assertj.core.api.Assertions.assertThat;
+
+import java.time.Duration;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -70,8 +71,8 @@ class ChromeAndFirefoxTest {
         String sutUrl = "https://bonigarcia.dev/selenium-webdriver-java/";
 
         // Implicit timeout
-        chrome.manage().timeouts().implicitlyWait(timeout, SECONDS);
-        firefox.manage().timeouts().implicitlyWait(timeout, SECONDS);
+        chrome.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeout));
+        firefox.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeout));
 
         // Open page in different browsers
         chrome.get(sutUrl);
