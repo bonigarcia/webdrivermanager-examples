@@ -9,15 +9,15 @@
 
     <properties>
         <slf4j.version>1.7.32</slf4j.version>
-        <logback.version>1.2.5</logback.version>
+        <logback.version>1.2.7</logback.version>
 
-        <junit.version>5.7.2</junit.version>
-        <assertj.version>3.20.2</assertj.version>
+        <junit.version>5.8.1</junit.version>
+        <assertj.version>3.21.0</assertj.version>
         <selenium.version>4.0.0</selenium.version>
-        <phantomjsdriver.version>1.4.4</phantomjsdriver.version>
-        <wdm.version>5.0.1</wdm.version>
+        <phantomjsdriver.version>1.5.0</phantomjsdriver.version>
+        <wdm.version>5.0.3</wdm.version>
         <testng.version>7.4.0</testng.version>
-        <appium-java-client.version>7.5.1</appium-java-client.version>
+        <appium-java-client.version>7.6.0</appium-java-client.version>
 
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 
