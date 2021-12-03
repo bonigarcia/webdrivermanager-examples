@@ -96,20 +96,17 @@ class FirefoxTest {
 
 If you have questions on how to use WebDriverManager properly with a special configuration or suchlike, please consider asking a question on [Stack Overflow] and tag it with  *webdrivermanager-java*.
 
+## Support
 
-## Backers
+WebDriverManager is part of [OpenCollective], an online funding platform for open and transparent communities. You can support the project by contributing as a backer (i.e., a personal [donation] or [recurring contribution]) or as a [sponsor] (i.e., a recurring contribution by a company).
 
-Thank you to all our backers! [[Become a backer](https://opencollective.com/webdrivermanager#backer)]
+### Backers
 
-<a href="https://opencollective.com/webdrivermanager#backers" target="_blank"><img src="https://opencollective.com/webdrivermanager/backers.svg?width=890"></a>
+<a href="https://opencollective.com/webdrivermanager" target="_blank"><img src="https://opencollective.com/webdrivermanager/backers.svg?width=890"></a>
 
-## Sponsors
+### Sponsors
 
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/webdrivermanager#sponsor)]
-
-<a href="https://opencollective.com/webdrivermanager/sponsor/0/website" target="_blank"><img src="https://opencollective.com/webdrivermanager/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/webdrivermanager/sponsor/1/website" target="_blank"><img src="https://opencollective.com/webdrivermanager/sponsor/1/avatar.svg"></a>
-
+<a href="https://opencollective.com/webdrivermanager" target="_blank"><img src="https://opencollective.com/webdrivermanager/sponsor.svg?width=890"></a>
 
 ## About
 
@@ -122,3 +119,7 @@ WebDriverManager (Copyright &copy; 2015-2021) is a personal project of [Boni Gar
 [Logo]: https://bonigarcia.github.io/img/webdrivermanager.png
 [GitHub Repository]: https://github.com/bonigarcia/webdrivermanager-examples
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/webdrivermanager-java
+[OpenCollective]: https://opencollective.com/webdrivermanager
+[donation]: https://opencollective.com/webdrivermanager/donate
+[recurring contribution]: https://opencollective.com/webdrivermanager/contribute/backer-8132/checkout
+[sponsor]: https://opencollective.com/webdrivermanager/contribute/sponsor-8133/checkout
