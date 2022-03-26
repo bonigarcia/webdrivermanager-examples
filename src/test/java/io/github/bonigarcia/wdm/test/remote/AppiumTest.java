@@ -46,7 +46,7 @@ class AppiumTest {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "chrome");
         capabilities.setCapability("deviceName", "Samsung Galaxy S6");
-        driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),
+        driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),
                 capabilities);
     }
 
