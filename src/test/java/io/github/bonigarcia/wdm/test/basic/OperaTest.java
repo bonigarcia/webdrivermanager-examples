@@ -41,7 +41,7 @@ class OperaTest {
     static void setupClass() {
         WebDriverManager operadriver = WebDriverManager.operadriver();
         browserPath = operadriver.getBrowserPath();
-        assumeThat(browserPath.isPresent());
+        assumeThat(browserPath.isPresent()).isTrue();
         operadriver.setup();
         System.setProperty("webdriver.chrome.driver",
                 operadriver.getDownloadedDriverPath());
