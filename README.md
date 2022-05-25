@@ -106,7 +106,9 @@ WebDriverManager is part of [OpenCollective], an online funding platform for ope
 
 ### Sponsors
 
-<a href="https://opencollective.com/webdrivermanager" target="_blank"><img src="https://opencollective.com/webdrivermanager/sponsor.svg?width=890"></a>
+<a href="https://opencollective.com/webdrivermanager/sponsor/0/website" target="_blank"><img src="https://opencollective.com/webdrivermanager/sponsor/0/avatar.svg" style="width: 80px; height: 60px; object-fit: cover;"></a>
+<a href="https://opencollective.com/webdrivermanager/sponsor/1/website" target="_blank"><img src="https://opencollective.com/webdrivermanager/sponsor/1/avatar.svg" style="width: 80px; height: 60px; object-fit: cover;"></a>
+<a href="https://opencollective.com/webdrivermanager/sponsor/2/website" target="_blank"><img src="https://opencollective.com/webdrivermanager/sponsor/2/avatar.svg"></a>
 
 ## About
 
