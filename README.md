@@ -1,6 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.bonigarcia/webdrivermanager.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3Aio.github.bonigarcia%20a%3Awebdrivermanager)
 [![Build Status](https://github.com/bonigarcia/webdrivermanager-examples/workflows/build/badge.svg)](https://github.com/bonigarcia/webdrivermanager-examples/actions)
-[![badge-jdk](https://img.shields.io/badge/jdk-8-green.svg)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+[![badge-jdk](https://img.shields.io/badge/jdk-11-green.svg)](https://www.oracle.com/java/technologies/downloads/)
 [![License badge](https://img.shields.io/badge/license-Apache2-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Backers on Open Collective](https://opencollective.com/webdrivermanager/backers/badge.svg)](#backers)
 [![Sponsors on Open Collective](https://opencollective.com/webdrivermanager/sponsors/badge.svg)](#sponsors)
@@ -106,7 +106,9 @@ WebDriverManager is part of [OpenCollective], an online funding platform for ope
 
 ### Sponsors
 
-<a href="https://opencollective.com/webdrivermanager" target="_blank"><img src="https://opencollective.com/webdrivermanager/sponsor.svg?width=890"></a>
+<a href="https://opencollective.com/webdrivermanager/sponsor/0/website" target="_blank"><img src="https://opencollective.com/webdrivermanager/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/webdrivermanager/sponsor/1/website" target="_blank"><img src="https://opencollective.com/webdrivermanager/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/webdrivermanager/sponsor/2/website" target="_blank"><img src="https://opencollective.com/webdrivermanager/sponsor/2/avatar.svg"></a>
 
 ## About
 
