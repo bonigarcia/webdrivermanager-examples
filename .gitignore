@@ -8,3 +8,4 @@ target
 phantomjsdriver.log
 *.jpg
 *.mp4
+node_modules/

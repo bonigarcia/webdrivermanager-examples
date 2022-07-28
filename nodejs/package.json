@@ -1,0 +1,13 @@
+{
+    "name": "wdm-test",
+    "description": "Basic test using Selenium WebDriver in Node.js and WedDriverManager as server",
+    "version": "1.0.0",
+    "license": "Apache Version 2.0",
+    "author": "Boni García",
+    "scripts": {
+        "start": "node wdm-server-test.js"
+    },
+    "dependencies": {
+        "selenium-webdriver": "^4.3.0"
+    }
+}
