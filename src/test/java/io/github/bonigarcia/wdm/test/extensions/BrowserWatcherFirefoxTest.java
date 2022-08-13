@@ -16,6 +16,8 @@
  */
 package io.github.bonigarcia.wdm.test.extensions;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -58,7 +60,7 @@ class BrowserWatcherFirefoxTest {
                 .executeScript("return console._bwLogs;");
 
         // if the extension is installed, "logs" should not be null
-        System.out.println(logs);
+        assertNotNull(logs);
     }
 
 }
