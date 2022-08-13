@@ -27,6 +27,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -42,7 +43,8 @@ class BrowserWatcherChromeTest {
         ChromeOptions options = new ChromeOptions();
         options.addExtensions(extension.toFile());
 
-        driver = WebDriverManager.chromedriver().capabilities(options).create();
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver(options);
     }
 
     @AfterEach

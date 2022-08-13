@@ -30,6 +30,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -49,13 +50,13 @@ class DarkBgFirefoxTest {
         profile.addExtension(extension.toFile());
         options.setProfile(profile);
 
-        driver = WebDriverManager.firefoxdriver().capabilities(options)
-                .create();
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver(options);
     }
 
     @AfterEach
     void teardown() throws InterruptedException {
-        // FIXME: pause for manual browser inspection
+        // pause for manual browser inspection
         Thread.sleep(Duration.ofSeconds(3).toMillis());
 
         driver.quit();

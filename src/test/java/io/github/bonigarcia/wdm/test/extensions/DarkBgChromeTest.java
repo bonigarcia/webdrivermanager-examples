@@ -30,6 +30,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -42,16 +43,17 @@ class DarkBgChromeTest {
     @BeforeEach
     void setup() throws URISyntaxException {
         Path extension = Paths
-                .get(ClassLoader.getSystemResource("dark-bg.xpi").toURI());
+                .get(ClassLoader.getSystemResource("dark-bg.crx").toURI());
         ChromeOptions options = new ChromeOptions();
         options.addExtensions(extension.toFile());
 
-        driver = WebDriverManager.chromedriver().capabilities(options).create();
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver(options);
     }
 
     @AfterEach
     void teardown() throws InterruptedException {
-        // FIXME: pause for manual browser inspection
+        // pause for manual browser inspection
         Thread.sleep(Duration.ofSeconds(3).toMillis());
 
         driver.quit();

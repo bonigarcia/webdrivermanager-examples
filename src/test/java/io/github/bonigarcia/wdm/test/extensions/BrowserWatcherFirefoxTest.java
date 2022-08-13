@@ -26,6 +26,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
@@ -44,8 +45,8 @@ class BrowserWatcherFirefoxTest {
         profile.addExtension(extension.toFile());
         options.setProfile(profile);
 
-        driver = WebDriverManager.firefoxdriver().capabilities(options)
-                .create();
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver(options);
     }
 
     @AfterEach

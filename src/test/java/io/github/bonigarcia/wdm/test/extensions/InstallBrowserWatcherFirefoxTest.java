@@ -40,7 +40,9 @@ class InstallBrowserWatcherFirefoxTest {
         Path extension = Paths.get(ClassLoader
                 .getSystemResource("browserwatcher-1.2.0.xpi").toURI());
 
-        driver = WebDriverManager.firefoxdriver().create();
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver();
+
         ((FirefoxDriver) driver).installExtension(extension, false);
     }
 
