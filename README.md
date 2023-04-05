@@ -119,7 +119,7 @@ WebDriverManager is part of [OpenCollective], an online funding platform for ope
 
 ## About
 
-WebDriverManager (Copyright &copy; 2015-2022) is a personal project of [Boni Garcia] licensed under [Apache 2.0 License].
+WebDriverManager (Copyright &copy; 2015-2023) is a personal project of [Boni Garcia] licensed under [Apache 2.0 License].
 
 [Apache 2.0 License]: https://www.apache.org/licenses/LICENSE-2.0
 [Boni Garcia]: https://bonigarcia.github.io/
