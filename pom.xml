@@ -15,7 +15,7 @@
         <assertj.version>3.24.2</assertj.version>
         <selenium.version>4.12.0</selenium.version>
         <phantomjsdriver.version>1.5.0</phantomjsdriver.version>
-        <wdm.version>5.5.2</wdm.version>
+        <wdm.version>5.5.3</wdm.version>
         <testng.version>7.8.0</testng.version>
         <appium-java-client.version>8.5.1</appium-java-client.version>
 
