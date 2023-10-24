@@ -19,7 +19,7 @@
         <testng.version>7.8.0</testng.version>
         <appium-java-client.version>9.0.0</appium-java-client.version>
 
-        <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.2.1</maven-surefire-plugin.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
