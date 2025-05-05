@@ -13,7 +13,7 @@
 
         <junit.version>5.12.2</junit.version>
         <assertj.version>3.27.3</assertj.version>
-        <selenium.version>4.31.0</selenium.version>
+        <selenium.version>4.32.0</selenium.version>
         <phantomjsdriver.version>1.5.0</phantomjsdriver.version>
         <wdm.version>6.1.0</wdm.version>
         <testng.version>7.11.0</testng.version>
